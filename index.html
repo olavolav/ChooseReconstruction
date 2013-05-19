@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Choose the network reconstruction method that's best for you</title>
+    <meta charset="utf-8" />
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="backbone-min.js"></script>
+    <script type="text/javascript" src="choice_tree.js"></script>
+    <link rel="stylesheet" href="choice_tree.css" type="text/css" />
+  </head>
+  
+  <body>
+    <header>
+      <h1>Dear neuroscientist, choose your reconstruction method</h1>
+      <p>Finding the right tool to analyze structural connectivity can be tough, since there are so many out there. We can help, though!</p>
+      <p>Here are the criteria. Click on one to restrict your search:
+        <ul id='criteria'>
+          <!-- list is generated dynamically -->
+        </ul>
+      </p>
+    </header>
+    
+    <ul id='choice_tree'>
+      <!-- list is generated dynamically -->
+    </ul>
+    
+    <footer>
+      There are currently no methods listed. (Please enable JavaScript to use this app.)
+      <!-- number is updated dynamically -->
+    </footer>
+    
+    <script type="text/template" id="category-template">
+      <li>
+        <%= name %>
+        <select>
+          <option>-</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </li>
+    </script>
+
+    <script type="text/template" id="method-template">
+      <h2><%= name %> <span class="verified_symbol" style="display:none">⚐</span></h2>
+      
+      <ul class="properties"><%= properties_list %></ul>
+      <p class="references">➥ <a class="reference_link" href="<%= reference_url %>">reference</a></p>
+    </script>
+    
+    <script type="text/template" id="stats-template">
+      Note that the information of methods marked with the flag symbol ⚐ has been verified by the authors of the paper shown as reference.<br/>
+      There are currently <%= nr %> methods listed. Want to add your own? Please do <a href="mailto:olav@nld.ds.mpg.de">contact us</a>.
+    </script>
+    
+  </body>
+</html>
