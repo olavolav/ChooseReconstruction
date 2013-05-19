@@ -1,3 +1,14 @@
+// This is the source file for the ChooseReconstructions site, written using
+// Backbone.js. The whole thing is completely static, all the content is
+// hard-coded at the end of this file.
+//
+// by Olav Stetter, 2013
+
+
+/** @depend jquery-1.7.2.min.js
+  * @depend underscore-min.js
+  * @depend backbone.js
+  */
 
 $(document).ready(function(){
   // alert("document ready.");
