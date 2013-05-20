@@ -18,6 +18,9 @@
         <ul id='criteria'>
           <!-- list is generated dynamically -->
         </ul>
+        <div id='filterstats'>
+          Please specify your criteria.
+        </div>
       </p>
     </header>
     
@@ -46,6 +49,10 @@
       
       <ul class="properties"><%= properties_list %></ul>
       <p class="references">➥ <a class="reference_link" href="<%= reference_url %>">reference</a></p>
+    </script>
+    
+    <script type="text/template" id="filterstats-template">
+      There are <%= nr %> method(s) that match your criteria.
     </script>
     
     <script type="text/template" id="stats-template">

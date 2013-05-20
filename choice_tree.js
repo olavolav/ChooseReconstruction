@@ -63,6 +63,7 @@ $(document).ready(function(){
     model: ReconstructionMethod,
     
     apply_filter: function() {
+      var matching_method_count = 0;
       _.each(this.models, function(mod) {
         // var mod = this; // the model we are examining right now
         var all_categories_okay = true;
@@ -80,11 +81,14 @@ $(document).ready(function(){
         });
         if(all_categories_okay) {
           mod.view.show();
+          matching_method_count++;
         } else {
           mod.view.hide();
         }
       });
+      return matching_method_count;
     }
+    
   });
   
   // create list of methods
@@ -177,6 +181,8 @@ $(document).ready(function(){
   var CategoryList = Backbone.Collection.extend({
     model: Category,
     el: $('#criteria'),
+    filterStatsTemplate: _.template($('#filterstats-template').html()),
+    filterElement: $('#filterstats'),
     
     register: function(c_name) {
       var c_names_so_far_collected = this.pluck("name");
@@ -193,11 +199,12 @@ $(document).ready(function(){
         var new_c = new Category({"name" : c_name});
         this.add(new_c);
       }
-    }
+    },
     
-    // apply_filter: function(c_name, value) {
-    //   // alert("DEBUG: applying new filter: "+c_name+" -> "+value);
-    // }
+    render_filter_stats: function(match_count) {
+      this.filterElement.fadeTo(0, 0.5).html(this.filterStatsTemplate({nr: match_count})).fadeTo(300, 1);
+      // this.filterElement.fadeIn(300);
+    }
     
   });
   
@@ -228,7 +235,8 @@ $(document).ready(function(){
     
     launch_filtering: function(event) {
       // alert("DEBUG: change in filter value for category "+this.model.get("name"));
-      methods.apply_filter();
+      var match_count = methods.apply_filter();
+      categories.render_filter_stats(match_count);
     }
     
   });
@@ -260,7 +268,8 @@ $(document).ready(function(){
   new ReconstructionMethod({name: "Cross-Correlation", properties: {
       "can work with single cell resolution" : true,
       "can work with calcium fluorescence data" : true,
-      "can work with macro scale resolution" : true
+      "can work with macro scale resolution" : true,
+      "can work with fMRI data" : true
     },
     reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
   });
@@ -268,19 +277,23 @@ $(document).ready(function(){
       "can work with single cell resolution" : true,
       "non-linear" : true,
       "model-free" : true,
-      "can work with spike data" : true
+      "can work with spike data" : true,
+      "can work with macro scale resolution" : true,
+      "can work with fMRI data" : true
     },
     reference_url : 'http://en.wikipedia.org/wiki/Mutual_information'
   });
   new ReconstructionMethod({name: "Granger Causality", properties: {
       "can work with single cell resolution" : true,
-      "can work with macro scale resolution" : true
+      "can work with macro scale resolution" : true,
+      "can work with fMRI data" : true
     },
     reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
   });
   new ReconstructionMethod({name: "Transfer Entropy", properties: {
       "non-linear" : true,
       "can work with single cell resolution" : true,
+      "can work with macro scale resolution" : true,
       "model-free" : true,
       "can work with spike data" : true
     },
@@ -303,7 +316,7 @@ $(document).ready(function(){
     },
     reference_url : 'http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562720'
   });
-  new ReconstructionMethod({name: "Anatomical Reconstruction", properties: {
+  new ReconstructionMethod({name: "Anatomical Reconstruction of Cells", properties: {
       "can work with single cell resolution" : true,
       "can work with anatomical data" : true,
       "model-free" : true
