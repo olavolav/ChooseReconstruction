@@ -28,7 +28,9 @@ header {
 }
 
 .rec_method {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+
   border: 1px solid #aac;
   list-style: none;
   width: 300px; /*25%;*/
