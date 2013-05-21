@@ -202,8 +202,7 @@ $(document).ready(function(){
     },
     
     render_filter_stats: function(match_count) {
-      this.filterElement.fadeTo(0, 0.5).html(this.filterStatsTemplate({nr: match_count})).fadeTo(300, 1);
-      // this.filterElement.fadeIn(300);
+      this.filterElement.html(this.filterStatsTemplate({nr: match_count}));
     }
     
   });
