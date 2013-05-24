@@ -38,17 +38,8 @@ $(document).ready(function(){
     
     initialize: function(settings) {
       // add default variables, if they had not been set as parameter to the constructor
-      var met = this;
-      var temp_props = met.get("properties");
-      _.each(DEFAULT_METHOD_PROPERTIES, function(value, key) {
-        if(typeof(temp_props[key]) == "undefined") {
-          // alert("DEBUG: adding default value to "+met.get("name")+", namely "+key+" : "+value);
-          temp_props[key] = value; // add default value
-        }
-      });
-      met.set("properties", temp_props);
-      
-      // alert("initialized method: "+this.get("name"));
+      this.set("properties", $.extend({}, DEFAULT_METHOD_PROPERTIES, this.get("properties")));
+
       this.view = new ReconstructionMethodView({model: this});
       methods.add(this);
       
@@ -114,11 +105,10 @@ $(document).ready(function(){
     },
     
     render: function() {
-      // alert("rendering view for method: "+this.model.get("name"));
-      
       // assemble proprties list string
-      var prop = _.reduce(this.model.get("properties"), function(memo, value, key){ return memo+"<li>"+key+": "+(value ? "Yes" : "No")+"</li>"; }, "")
-      // alert("DEBUG: prop = "+prop);
+      var prop = _.reduce(this.model.get("properties"), function(memo, value, key) {
+        return memo+"<li>"+key+": "+(value ? "Yes" : "No")+"</li>";
+      }, "");
       
       this.$el.html( this.template({
         "name" : this.model.get("name"),
