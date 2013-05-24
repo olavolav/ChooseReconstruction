@@ -324,6 +324,27 @@ $(document).ready(function(){
     },
     reference_url : 'http://www.annualreviews.org/doi/pdf/10.1146/annurev.ph.46.030184.002323'
   });
+  new ReconstructionMethod({name: "Generalized Linear Model", properties: {
+      "can work with single cell resolution" : true,
+      "non-linear" : true,
+      "can work with spike data": true
+    },
+    reference_url : 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'
+  });
+  new ReconstructionMethod({name: "Dynamical Cascades", properties: {
+      "can work with single cell resolution" : true,
+      "non-linear" : true,
+      "can work with spike data": true
+    },
+    reference_url : 'http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000271'
+  });
+  new ReconstructionMethod({name: "Dynamical Causal Modeling", properties: {
+      "non-linear" : true,
+      "can work with macro scale resolution" : true,
+      "can work with fMRI data" : true
+    },
+    reference_url : 'http://www.sciencedirect.com/science/article/pii/S1053811903002027'
+  });
   
   
   // start app
