@@ -44,7 +44,8 @@ $(document).ready(function(){
       methods.add(this);
       
       // register properties as future filter categories
-      _.each(this.get("properties"), function(value, key){categories.register(key)} );
+      // _.each(this.get("properties"), function(value, key){categories.register(key)} );
+      _(this.get("properties")).keys().forEach( function(key) { categories.register(key); } );
     }
     
   });
@@ -55,11 +56,11 @@ $(document).ready(function(){
     
     apply_filter: function() {
       var matching_method_count = 0;
-      _.each(this.models, function(mod) {
+      _(this.models).each( function(mod) {
         // var mod = this; // the model we are examining right now
         var all_categories_okay = true;
         
-        _.each(categories.models, function(categ) {
+        _(categories.models).each( function(categ) {
           // var categ = this; // the category we are checking right now
           // alert(categ);
           var f_value = categ.view.filter_setting_right_now();
@@ -89,7 +90,6 @@ $(document).ready(function(){
   var ReconstructionMethodView = Backbone.View.extend({
     tagName: 'li',
     template: _.template($('#method-template').html()),
-    // template: _.template('<h2><%= name %></h2>'),
     
     initialize: function() {
       // alert("initializing view for method: "+this.model.get("name"));
@@ -179,7 +179,7 @@ $(document).ready(function(){
       var c_name_already_present = false;
 
       if(c_names_so_far_collected.length) {
-        if(_.contains(c_names_so_far_collected, c_name)) {
+        if( _(c_names_so_far_collected).contains(c_name) ) {
           c_name_already_present = true;
         }
       }
