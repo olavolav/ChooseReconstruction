@@ -4,6 +4,8 @@
 //
 // by Olav Stetter, 2013
 
+// Command used for minification:
+// $ juicer merge -i -s --force choice_tree.js
 
 /** @depend jquery-1.7.2.min.js
   * @depend underscore-min.js
@@ -44,8 +46,7 @@ $(document).ready(function(){
       methods.add(this);
       
       // register properties as future filter categories
-      // _.each(this.get("properties"), function(value, key){categories.register(key)} );
-      _(this.get("properties")).keys().forEach( function(key) { categories.register(key); } );
+      _(this.get("properties")).each( function(value, key) { categories.register(key); } );
     }
     
   });
