@@ -31,13 +31,13 @@
     <script type="text/template" id="category-template">
       <ul class="filter-btn-group">
         <% var c_name = "filter-btn-neutral-inactive"; %>
-        <% if(filter_value===0) { c_name = "filter-btn-neutral-active"; } %>
+        <% if(value===0) { c_name = "filter-btn-neutral-active"; } %>
         <li class="filter-btn <%= c_name %>" data-id='0'>-</li>
         <% c_name = "filter-btn-yes-inactive"; %>
-        <% if(filter_value===1) { c_name = "filter-btn-yes-active"; } %>
+        <% if(value===1) { c_name = "filter-btn-yes-active"; } %>
         <li class="filter-btn <%= c_name %>" data-id='1'>&#x2713;</li>
         <% c_name = "filter-btn-no-inactive"; %>
-        <% if(filter_value===-1) { c_name = "filter-btn-no-active"; } %>
+        <% if(value===-1) { c_name = "filter-btn-no-active"; } %>
         <li class="filter-btn <%= c_name %>" data-id='-1'>x</li>
       </ul>
       <%= name %>

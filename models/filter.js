@@ -3,12 +3,11 @@ app.Filter = Backbone.Model.extend({
   defaults: function() {
     return {
       name: "unknown",
-      filter_value: 0
+      value: 0
     };
   },
   
   initialize: function() {
-    // categories.add(this);
     this.view = new app.FilterView({model: this});
   },
   
