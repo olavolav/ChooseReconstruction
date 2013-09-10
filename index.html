@@ -52,7 +52,13 @@
     </script>
     
     <script type="text/template" id="filterstats-template">
-      There are <%= nr %> method(s) that match your criteria.
+      There
+      <% if(nr == 1) { %>
+        is 1 method that matches
+      <% } else { %>
+        are <%= nr %> methods that match
+      <% } %>
+      your criteria.
     </script>
     
     <script type="text/template" id="stats-template">
