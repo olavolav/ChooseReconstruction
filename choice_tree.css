@@ -14,9 +14,42 @@ header {
   padding: 1em;
 }
 
+/* define filter styles */
+
 #criteria {
   list-style: none;
 }
+
+.filter {
+  display: block;
+}
+
+.filter-btn-group {
+  display: inline;
+  background-color: #999;
+  color: black;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.filter-btn {
+  list-style: none;
+  display: inline;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 3px;
+  padding: 2px;
+}
+
+/* for testing only, t.b.d. */
+.filter-btn-neutral-active, .filter-btn-yes-active, .filter-btn-no-active {
+  color: white;
+}
+
+/* define reconstruction method styles */
 
 .rec_method h2 {
   font-size: 120%;
@@ -55,7 +88,7 @@ header {
   padding-top: 7px;
 }
 
-.method_hover {
+.rec_method:hover {
   background-color: #1A1A2A;
 }
 
