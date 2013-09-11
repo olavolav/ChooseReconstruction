@@ -5,7 +5,8 @@ app.ReconstructionMethod = Backbone.Model.extend({
       name: "Anonymous method",
       properties: {},
       verified_by_author: false,
-      matches_current_filters: true // initially, show all methods
+      matches_current_filters: true, // initially, show all methods
+      reference_url: ""
     };
   },
   

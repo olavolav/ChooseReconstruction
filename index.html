@@ -44,10 +44,31 @@
     </script>
 
     <script type="text/template" id="method-template">
-      <h2><%= name %> <span class="verified_symbol" style="display:none">⚐</span></h2>
-      
-      <ul class="properties"><%= properties_list %></ul>
-      <p class="references">➥ <a class="reference_link" href="<%= reference_url %>">reference</a></p>
+      <h2><%= name %>
+      <% if(verified_by_author) { %>
+        <span class="verified_symbol">⚐</span>
+      <% } %>
+      </h2>
+      <% var prop = properties; %>
+      <ul class="properties">
+        <% _(prop).each(function(value, name) { %>
+          <li>
+            <span class="properties-value">
+              <% if(value===true) { %>
+                &#x2713;
+              <% } else { %>
+                x
+              <% } %>
+            </span>
+            <span class="properties-name"><%= name %></span>
+          </li>
+        <% }); %>
+      </ul>
+      <p class="references">
+      <% if(reference_url !== "") { %>
+        <a class="reference_link" href="<%= reference_url %>">Reference</a>
+      <% } %>
+      </div>
     </script>
     
     <script type="text/template" id="filterstats-template">
@@ -65,12 +86,9 @@
       There are currently <%= nr %> methods listed. Want to add your own? Please do <a href="mailto:olav@nld.ds.mpg.de">contact us</a>.
     </script>
     
-    <!-- <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="underscore-min.js"></script>
-    <script type="text/javascript" src="backbone-min.js"></script>
-    <script type="text/javascript" src="choice_tree.js"></script> -->
-    <script type="text/javascript" src="choice_tree.min.js"></script>
     
+    
+    <script type="text/javascript" src="choice_tree.min.js"></script>    
     
     <script type="text/javascript">
       var methods = new app.ReconstructionMethodList();
@@ -106,7 +124,8 @@
           "can work with single cell resolution" : true,
           "can work with macro scale resolution" : true,
           "model-free" : true,
-          "can work with spike data" : true
+          "can work with spike data" : true,
+          "can work with fMRI data" : true
         },
         reference_url : 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1'
       }));

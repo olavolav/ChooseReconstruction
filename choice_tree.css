@@ -122,8 +122,29 @@ header {
   color: blue;
 }
 
+.properties > li {
+  list-style: none;
+}
+
+.properties .properties-value {
+  display: inline-block;
+  font-weight: bold;
+  width: 10px;
+  text-align: center;
+}
+
+.properties .properties-name {
+  padding-left: 8px;
+}
+
 .references {
-  color: white;
+  width: auto;
+  text-align: center;
+}
+
+.references a {
+  color: #888;
+  text-decoration: none;
 }
 
 a, a:visited {
