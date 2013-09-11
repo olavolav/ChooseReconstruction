@@ -10,6 +10,7 @@ app.AppView = Backbone.View.extend({
     this.filter_section = new app.FilterSection(filters);
     this.methods_section = new app.MethodSection(methods);
     
+    _.bindAll(this, 'render');
     this.render();
   },
   

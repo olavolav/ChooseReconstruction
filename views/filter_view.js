@@ -15,8 +15,8 @@ app.FilterView = Backbone.View.extend({
   },
   
   events: {
-    // Defining events via inactive buttons also makes sure that nothing happens if click
-    // happens on active buttons
+    // Defining events via inactive buttons also makes sure that nothing happens if
+    // click happens on active buttons
     "click .filter-btn-neutral-inactive": "click_in_neutral_button",
     "click .filter-btn-yes-inactive": "click_in_yes_button",
     "click .filter-btn-no-inactive": "click_in_no_button"
@@ -29,18 +29,6 @@ app.FilterView = Backbone.View.extend({
   click_in_filter_buttons: function(new_value) {
     // alert("DEBUG: click_in_filter_buttons, new_value = "+new_value);
     this.model.set('value', new_value);
-    // send an event to the method section that the filter settings have changed
-    app.trigger('new_filter_settings');
-  },
-  
-  filter_setting_right_now: function() {
-    return this.$el.find('select').val();
-  },
-  
-  launch_filtering: function(event) {
-    // alert("DEBUG: change in filter value for category "+this.model.get("name"));
-    var match_count = methods.apply_filter();
-    categories.render_filter_stats(match_count);
   }
   
 });

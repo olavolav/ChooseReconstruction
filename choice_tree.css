@@ -22,31 +22,53 @@ header {
 
 .filter {
   display: block;
+  float: left;
+  width: 40%;
+  min-width: 400px;
 }
 
 .filter-btn-group {
-  display: inline;
-  background-color: #999;
+  display: inline-block;
   color: black;
-  border: 1px solid #333;
-  border-radius: 3px;
   padding: 0px;
-  margin: 0px;
-  overflow: hidden;
+  margin: 2px;
 }
 
 .filter-btn {
+  background-color: #555;
   list-style: none;
-  display: inline;
+  display: inline-block;
   font-weight: bold;
   cursor: pointer;
-  margin: 3px;
-  padding: 2px;
+  margin: 0px;
+  padding: 2px 5px;
+}
+
+.filter-btn-group .filter-btn:first-child {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.filter-btn-group .filter-btn:last-child {
+  border-radius: 0px 4px 4px 0px;
 }
 
 /* for testing only, t.b.d. */
 .filter-btn-neutral-active, .filter-btn-yes-active, .filter-btn-no-active {
   color: white;
+}
+.filter-btn-neutral-active {
+  background-color: #999;
+}
+.filter-btn-yes-active {
+  background-color: green;
+}
+.filter-btn-no-active {
+  background-color: red;
+}
+
+#filterstats {
+  clear: both;
+  padding-top: 20px;
 }
 
 /* define reconstruction method styles */

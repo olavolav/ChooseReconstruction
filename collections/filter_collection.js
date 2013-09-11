@@ -5,7 +5,8 @@ app.FilterList = Backbone.Collection.extend({
   filter_element: $('#filterstats'),
   
   initialize: function() {
-    _.bindAll(this, 'generate_from_method_collection', 'register', 'render_filter_stats');
+    _.bindAll(this, 'generate_from_method_collection', 'trigger_new_search', 'register', 'render_filter_stats');
+    this.listenTo(this, 'change', this.trigger_new_search);
   },
   
   generate_from_method_collection: function(method_list) {
@@ -19,6 +20,12 @@ app.FilterList = Backbone.Collection.extend({
         coll.register(key);
       });
     });
+  },
+  
+  trigger_new_search: function() {
+    // alert("DEBUG: call to FilterList::trigger_new_search");
+    // send an event to the method section that the filter settings have changed
+    app.trigger('new_filter_settings', this.models);
   },
   
   register: function(c_name) {
