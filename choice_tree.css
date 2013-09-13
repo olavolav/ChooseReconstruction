@@ -97,7 +97,6 @@ header {
 }
 
 .verified_symbol {
-  display: none; /* don't display by default */
   padding-left: 5px;
 }
 
