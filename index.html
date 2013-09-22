@@ -10,11 +10,16 @@
       <h1>Dear neuroscientist, choose your reconstruction method</h1>
       <p>Finding the right tool to analyze structural connectivity can be tough, since there are so many out there. We can help, though!</p>
       <p>Here are the criteria. Click on one to restrict your search:
-        <ul id='criteria'>
-          <!-- list is generated dynamically -->
-        </ul>
-        <div id='filterstats'>
-          Please specify your criteria.
+        <div id='criteria'>
+          <ul id='criteria-data-types'>
+            <!-- list is generated dynamically -->
+          </ul>
+          <ul id='criteria-features'>
+            <!-- list is generated dynamically -->
+          </ul>
+          <div id='filterstats'>
+            Please specify your criteria.
+          </div>
         </div>
       </p>
     </header>
@@ -30,15 +35,20 @@
     
     <script type="text/template" id="category-template">
       <ul class="filter-btn-group">
-        <% var c_name = "filter-btn-neutral-inactive"; %>
-        <% if(value===0) { c_name = "filter-btn-neutral-active"; } %>
-        <li class="filter-btn <%= c_name %>" data-id='0'>-</li>
+        <% var c_name = ''; %>
+        <% if(!data_type_filter){ %>
+          <% c_name = "filter-btn-neutral-inactive"; %>
+          <% if(value===0) { c_name = "filter-btn-neutral-active"; } %>
+          <li class="filter-btn <%= c_name %>" data-id='0'>-</li>
+        <% } %>
         <% c_name = "filter-btn-yes-inactive"; %>
         <% if(value===1) { c_name = "filter-btn-yes-active"; } %>
         <li class="filter-btn <%= c_name %>" data-id='1'>&#x2713;</li>
-        <% c_name = "filter-btn-no-inactive"; %>
-        <% if(value===-1) { c_name = "filter-btn-no-active"; } %>
-        <li class="filter-btn <%= c_name %>" data-id='-1'>x</li>
+        <% if(!data_type_filter){ %>
+          <% c_name = "filter-btn-no-inactive"; %>
+          <% if(value===-1) { c_name = "filter-btn-no-active"; } %>
+          <li class="filter-btn <%= c_name %>" data-id='-1'>x</li>
+        <% } %>
       </ul>
       <%= name %>
     </script>

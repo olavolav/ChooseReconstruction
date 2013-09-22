@@ -5,7 +5,7 @@ app.FilterList = Backbone.Collection.extend({
   filter_element: $('#filterstats'),
   
   initialize: function() {
-    _.bindAll(this, 'generate_from_method_collection', 'trigger_new_search', 'register', 'render_filter_stats');
+    _.bindAll(this, 'generate_from_method_collection', 'select_data_type_filters', 'select_feature_filters', 'trigger_new_search', 'register', 'render_filter_stats');
     this.listenTo(this, 'change', this.trigger_new_search);
   },
   
@@ -20,6 +20,16 @@ app.FilterList = Backbone.Collection.extend({
         coll.register(key);
       });
     });
+  },
+  
+  select_data_type_filters: function() {
+    return _(this.select(function(f){
+      return f.get('data_type_filter') === true;
+    }));
+  },
+  
+  select_feature_filters: function() {
+    return _(this.select(function(f){ return f.get('data_type_filter') === false; }));
   },
   
   trigger_new_search: function() {
@@ -39,8 +49,13 @@ app.FilterList = Backbone.Collection.extend({
     }
     
     if(!c_name_already_present) {
-      // alert("DEBUG: found new category: "+c_name);
-      var new_c = new app.Filter({"name" : c_name});
+      // A bit of a hack: We specify the filter type by the name
+      var looks_like_data_filter = (c_name.substring(0, 8) === 'can work');
+      // alert("DEBUG: found new category: "+c_name+", looks_like_data_filter = "+looks_like_data_filter);
+      var new_c = new app.Filter({
+        'name': c_name,
+        'data_type_filter': looks_like_data_filter
+      });
       this.add(new_c);
     }
   },

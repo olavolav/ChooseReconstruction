@@ -19,7 +19,9 @@ app.FilterView = Backbone.View.extend({
     // click happens on active buttons
     "click .filter-btn-neutral-inactive": "click_in_neutral_button",
     "click .filter-btn-yes-inactive": "click_in_yes_button",
-    "click .filter-btn-no-inactive": "click_in_no_button"
+    "click .filter-btn-yes-active": "click_in_yes_button",
+    "click .filter-btn-no-inactive": "click_in_no_button",
+    "click .filter-btn-no-active": "click_in_no_button"
   },
   
   click_in_neutral_button: function() { this.click_in_filter_buttons(0); },
@@ -28,7 +30,12 @@ app.FilterView = Backbone.View.extend({
   
   click_in_filter_buttons: function(new_value) {
     // alert("DEBUG: click_in_filter_buttons, new_value = "+new_value);
-    this.model.set('value', new_value);
+    if(new_value !== this.model.get('value')) {
+      this.model.set('value', new_value);
+    } else {
+      // this is if the user clicked on an active filter
+      this.model.set('value', 0);
+    }
   }
   
 });

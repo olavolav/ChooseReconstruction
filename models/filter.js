@@ -1,18 +1,16 @@
 app.Filter = Backbone.Model.extend({
   
   initialize: function() {
-    _.bindAll(this, 'matches_name', 'can_match_method_right_now');
+    _.bindAll(this, 'can_match_method_right_now');
   },
   
   defaults: function() {
     return {
       name: "unknown",
-      value: 0 // default filter setting: neutral
+      value: 0, // default filter setting: neutral (0)
+      // other settings: on (1) and for features filters: off (-1)
+      data_type_filter: false // true for 'can work with X' filters
     };
-  },
-  
-  matches_name: function(c_name) {
-    return this.get("name") == c_name;
   },
   
   can_match_method_right_now: function(m_model) {
