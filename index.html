@@ -1,28 +1,37 @@
 <html>
   <head>
     <title>Choose the network reconstruction method that's best for you</title>
+    <link href='http://fonts.googleapis.com/css?family=Arvo|Oswald:300' rel='stylesheet' type='text/css'>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="choice_tree.css" type="text/css" />
   </head>
   
   <body>
     <header>
-      <h1>Dear neuroscientist, choose your reconstruction method</h1>
-      <p>Finding the right tool to analyze structural connectivity can be tough, since there are so many out there. We can help, though!</p>
-      <p>Here are the criteria. Click on one to restrict your search:
-        <div id='criteria'>
-          <ul id='criteria-data-types'>
-            <!-- list is generated dynamically -->
-          </ul>
-          <ul id='criteria-features'>
-            <!-- list is generated dynamically -->
-          </ul>
-          <div id='filterstats'>
-            Please specify your criteria.
-          </div>
-        </div>
-      </p>
+      <h1>Dear neuroscientist</h1>
+      <h2>choose your reconstruction method</h2>
+      
+      <p>Finding the right tool to analyze structural connectivity can be<br/>
+        tough, since there are so many out there. We can help, though!</p>
     </header>
+    
+    <div id='criteria' class='tri-down'>
+      <h2>Adjust the criteria to restrict your search</h2>
+      <div class='spacer'>&nbsp;</div>
+      
+      <div id='criteria-data-types'>
+        <h3>Please select what data you want the<br/>method to be able to work with:</h3>
+        <ul><!-- list is generated dynamically --></ul>
+      </div>
+      <div id='criteria-features'>
+        <h3>Please select what other properties the<br/>method should have:</h3>
+        <ul><!-- list is generated dynamically --></ul>
+      </div>
+      <div id='filterstats'>
+        Please specify your criteria.
+      </div>
+    </div>
+    <!-- <div class='arrow-down'></div> -->
     
     <ul id='choice_tree'>
       <!-- list is generated dynamically -->
@@ -50,7 +59,7 @@
           <li class="filter-btn <%= c_name %>" data-id='-1'>x</li>
         <% } %>
       </ul>
-      <%= name %>
+      <span class='name'><%= name %></span>
     </script>
 
     <script type="text/template" id="method-template">
