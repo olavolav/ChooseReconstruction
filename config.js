@@ -11,5 +11,6 @@ var DEFAULT_METHOD_PROPERTIES = {
   "can work with anatomical data" : false,
   "can work with fMRI data" : false,
   "model-free" : false,
-  "yields the ground truth, no approximation" : false
+  "has been tested in simulations": false,
+  "has been applied to real data": false
 };

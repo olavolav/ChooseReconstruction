@@ -15,23 +15,22 @@
         tough, since there are so many out there. We can help, though!</p>
     </header>
     
-    <div id='criteria' class='tri-down'>
+    <div id='criteria'>
       <h2>Adjust the criteria to restrict your search</h2>
       <div class='spacer'>&nbsp;</div>
       
       <div id='criteria-data-types'>
-        <h3>Please select what data you want the<br/>method to be able to work with:</h3>
+        <h3>Please select what data you want the method to be able to work with:</h3>
         <ul><!-- list is generated dynamically --></ul>
       </div>
       <div id='criteria-features'>
-        <h3>Please select what other properties the<br/>method should have:</h3>
+        <h3>Please select what other properties the method should have:</h3>
         <ul><!-- list is generated dynamically --></ul>
       </div>
       <div id='filterstats'>
         Please specify your criteria.
       </div>
     </div>
-    <!-- <div class='arrow-down'></div> -->
     
     <ul id='choice_tree'>
       <!-- list is generated dynamically -->
@@ -117,7 +116,9 @@
           "can work with single cell resolution" : true,
           "can work with calcium fluorescence data" : true,
           "can work with macro scale resolution" : true,
-          "can work with fMRI data" : true
+          "can work with fMRI data" : true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
       }));
@@ -127,14 +128,18 @@
           "model-free" : true,
           "can work with spike data" : true,
           "can work with macro scale resolution" : true,
-          "can work with fMRI data" : true
+          "can work with fMRI data" : true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://en.wikipedia.org/wiki/Mutual_information'
       }));
       methods.add( new app.ReconstructionMethod({name: "Granger Causality", properties: {
           "can work with single cell resolution" : true,
           "can work with macro scale resolution" : true,
-          "can work with fMRI data" : true
+          "can work with fMRI data" : true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
       }));
@@ -144,7 +149,9 @@
           "can work with macro scale resolution" : true,
           "model-free" : true,
           "can work with spike data" : true,
-          "can work with fMRI data" : true
+          "can work with fMRI data" : true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1'
       }));
@@ -153,7 +160,9 @@
           "can work with single cell resolution" : true,
           "can work with calcium fluorescence data" : true,
           "model-free" : true,
-          "can work with spike data": true
+          "can work with spike data": true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1002653',
         verified_by_author : true
@@ -161,47 +170,56 @@
       methods.add( new app.ReconstructionMethod({name: "Bayesian Inference", properties: {
           "non-linear" : true,
           "can work with single cell resolution" : true,
-          "can work with calcium fluorescence data" : true
+          "can work with calcium fluorescence data" : true,
+          "has been tested in simulations": true
         },
         reference_url : 'http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562720'
       }));
       methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction of Cells", properties: {
           "can work with single cell resolution" : true,
           "can work with anatomical data" : true,
-          "model-free" : true
+          "model-free" : true,
+          "has been applied to real data": true
         },
         reference_url : 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Tensor Diffusion Imaging", properties: {
-          "can work with anatomical data" : true,
-          "can work with macro scale resolution" : true
-        },
-        reference_url : 'http://www.pnas.org/content/109/28/11372.short'
-      }));
-      methods.add( new app.ReconstructionMethod({name: "Patch Clamp", properties: {
-          "can work with single cell resolution" : true,
-          "yields the ground truth, no approximation" : true
-        },
-        reference_url : 'http://www.annualreviews.org/doi/pdf/10.1146/annurev.ph.46.030184.002323'
-      }));
+      // methods.add( new app.ReconstructionMethod({name: "Tensor Diffusion Imaging", properties: {
+      //           "can work with anatomical data" : true,
+      //           "can work with macro scale resolution" : true
+      //         },
+      //         reference_url : 'http://www.pnas.org/content/109/28/11372.short'
+      //       }));
+      // methods.add( new app.ReconstructionMethod({name: "Patch Clamp", properties: {
+      //           "can work with spike data": true,
+      //           "can work with single cell resolution" : true,
+      //           "yields the ground truth, no approximation" : true
+      //         },
+      //         reference_url : 'http://www.annualreviews.org/doi/pdf/10.1146/annurev.ph.46.030184.002323'
+      //       }));
       methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model", properties: {
           "can work with single cell resolution" : true,
           "non-linear" : true,
-          "can work with spike data": true
+          "can work with spike data": true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'
       }));
       methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades", properties: {
           "can work with single cell resolution" : true,
           "non-linear" : true,
-          "can work with spike data": true
+          "can work with spike data": true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000271'
       }));
       methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling", properties: {
           "non-linear" : true,
           "can work with macro scale resolution" : true,
-          "can work with fMRI data" : true
+          "can work with fMRI data" : true,
+          "has been tested in simulations": true,
+          "has been applied to real data": true
         },
         reference_url : 'http://www.sciencedirect.com/science/article/pii/S1053811903002027'
       }));
