@@ -204,6 +204,17 @@ header p {
   text-shadow: 0 -1px 1px #666666; /*, 0 1px 1px #FFFFFF;*/
 }
 
+.rec_method.hidden-method {
+/*  background-color: #484843;*/
+/*  color: #f5f5f5;*/
+  box-shadow: none;
+}
+
+.rec_method.hidden-method h2 {
+  background-color: #666666;
+  color: #f5f5f5;
+}
+
 .verified_symbol {
   padding-left: 5px;
 }
@@ -215,14 +226,6 @@ header p {
 .rec_method ul {
   padding: 7px;
   font-size: 90%;
-}
-
-.method_active {
-  background-color: red;
-}
-
-.method_passive {
-  color: blue;
 }
 
 .properties > li {
