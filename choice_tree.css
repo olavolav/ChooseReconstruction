@@ -93,19 +93,19 @@ header p {
 #criteria-data-types {
   margin-left: 17%;
   margin-right: 3%;
+  float: left;
 }
 
 #criteria-features {
   margin-left: 3%;
   margin-right: 17%;
+  float: left;
 }
 
 .filter {
   display: block;
-  float: left;
-  width: 40%;
-  min-width: 400px;
-/*  position: relative;*/
+  width: auto;
+  min-width: 35%;
   min-height: 24px;
 }
 
