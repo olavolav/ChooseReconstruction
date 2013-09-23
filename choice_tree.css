@@ -124,8 +124,10 @@ header p {
   display: inline-block;
   font-weight: bold;
   cursor: pointer;
+  width: 20px;
+  text-align: center;
   margin: 0px;
-  padding: 2px 6px;
+  padding: 3px;
   text-shadow: none;
 }
 
