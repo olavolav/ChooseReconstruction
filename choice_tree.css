@@ -140,40 +140,29 @@ header p {
 }
 
 .filter-btn-neutral-inactive, .filter-btn-yes-inactive, .filter-btn-no-inactive {
-  /*margin-top: 0px;
-    margin-bottom: 2px;*/
   box-shadow: #444444 0px 2px;
   background-color: #cccccc;
 }
 
 .filter-btn-neutral-active, .filter-btn-yes-active, .filter-btn-no-active {
-/*  margin-top: 2px;
-  margin-bottom: 0px; */
   box-shadow: #555 0px -2px;
   color: white;
 }
 
 .filter-btn-neutral-active {
-/*  margin-top: 2px;*/
   background-color: #444444;
 }
 
 .filter-btn-yes-active {
-/*  margin-top: 2px;*/
   background-color: #579f7b;
   text-shadow: 0 -1px 1px #468063;
 }
 
 .filter-btn-no-active {
-/*  margin-top: 2px;*/
   background-color: #f45540;
   text-shadow: 0 -1px 1px #c0493a;
 }
 
-/*.filter .name {
-  position: relative;
-  top: 2px;
-}*/
 
 #filterstats {
   clear: both;
@@ -224,8 +213,8 @@ header p {
 }
 
 .rec_method ul {
-  padding-left: 20px;
-  padding-top: 7px;
+  padding: 7px;
+  font-size: 90%;
 }
 
 .method_active {
@@ -243,12 +232,12 @@ header p {
 .properties .properties-value {
   display: inline-block;
   font-weight: bold;
-  width: 10px;
+  width: 20px;
   text-align: center;
 }
 
 .properties .properties-name {
-  padding-left: 8px;
+  padding-left: 4px;
 }
 
 .references {
