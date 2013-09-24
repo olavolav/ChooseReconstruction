@@ -9,7 +9,7 @@ app.Filter = Backbone.Model.extend({
       name: "unknown",
       value: 0, // default filter setting: neutral (0)
       // other settings: on (1) and for features filters: off (-1)
-      data_type_filter: false // true for 'can work with X' filters
+      data_type_filter: false // true for 'Can work with X' filters
     };
   },
   

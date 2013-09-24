@@ -3,14 +3,14 @@ _.extend(app, Backbone.Events); // to enable observer role of EventDispatcher
 
 
 var DEFAULT_METHOD_PROPERTIES = {
-  "non-linear" : false,
-  "can work with single cell resolution" : false,
-  "can work with macro scale resolution" : false,
-  "can work with calcium fluorescence data" : false,
-  "can work with spike data" : false,
-  "can work with anatomical data" : false,
-  "can work with fMRI data" : false,
-  "model-free" : false,
-  "has been tested in simulations": false,
-  "has been applied to real data": false
+  "Non-linear" : false,
+  "Can work with single cell resolution" : false,
+  "Can work with macro scale resolution" : false,
+  "Can work with calcium fluorescence data" : false,
+  "Can work with spike data" : false,
+  "Can work with anatomical data" : false,
+  "Can work with fMRI data" : false,
+  "Model-free" : false,
+  "Has been tested in simulations": false,
+  "Has been applied to real data": false
 };
