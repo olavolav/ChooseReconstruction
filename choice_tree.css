@@ -6,7 +6,7 @@ body {
   padding: 0px;
   margin: 0px;
   font-size: 14px;
-  font-family: 'Arvo', serif;
+  font-family: 'Roboto Slab', serif;
   line-height: 1.4;
 }
 
@@ -102,6 +102,11 @@ header p {
   margin-right: 17%;
   float: left;
 }
+
+/*#criteria .name {
+  font-family: sans-serif;
+  font-size: 16px;
+}*/
 
 .filter {
   display: block;
@@ -243,6 +248,7 @@ header p {
   padding: 7px;
   font-size: 90%;
   margin-bottom: 10px;
+  font-family: sans-serif;
 }
 
 .properties > li {
