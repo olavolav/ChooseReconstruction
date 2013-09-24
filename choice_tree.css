@@ -224,6 +224,18 @@ header p {
   padding-left: 5px;
 }
 
+.properties .properties-value .yes {
+  color: #579f7b;
+}
+
+.properties .properties-value .no {
+  color: #f45540;
+}
+
+.rec_method.hidden-method .properties .properties-value .yes, .rec_method.hidden-method .properties .properties-value .no {
+  color: inherit;
+}
+
 /* Reference */
 .rec_method p {
   color: #999;

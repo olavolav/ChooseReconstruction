@@ -25,11 +25,11 @@ app.ReconstructionMethodView = Backbone.View.extend({
   
   hide: function() {
     // alert("hide");
-    this.$el.addClass('hidden-method');
-    this.$el.fadeTo(500, 0.2);
-    // this.$el.fadeTo(500, 0.2, function() {
-    //   $(this).addClass('hidden-method');
-    // });
+    // this.$el.addClass('hidden-method');
+    // this.$el.fadeTo(500, 0.2);
+    this.$el.fadeTo(500, 0.2, function() {
+      $(this).addClass('hidden-method');
+    });
   },
   
   show: function() {
