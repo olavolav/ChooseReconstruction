@@ -54,11 +54,12 @@ header p {
 #criteria {
   width: auto;
   padding: 8px;
-  margin: 15px;
+  margin: 15px 15px 25px 15px;
   background-color: #5c5c5a;
   border-radius: 10px;
   border: solid 1px #878787;
   text-shadow: black 0px 2px;
+  position: relative;
 }
 
 #criteria h2 {
@@ -103,10 +104,8 @@ header p {
   float: left;
 }
 
-/*#criteria .name {
-  font-family: sans-serif;
-  font-size: 16px;
-}*/
+
+
 
 .filter {
   display: block;
@@ -178,6 +177,34 @@ header p {
   padding-top: 20px;
 }
 
+/* define arrow downwards from the filter section
+reference: http://davidwalsh.name/css-triangles */
+
+#criteria:before, #criteria:after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 20px solid transparent;
+}
+
+/* top-stacked, smaller arrow */
+#criteria:before {
+  border-top-color: #5c5c5a;
+  bottom: -40px;
+  left: 50%;
+  margin-left: -20px;
+  z-index: 2;
+}
+
+/* arrow which acts as a background shadow */
+#criteria:after {
+  border-top-color: #878787;
+  bottom: -41px;
+  left: 50%;
+  margin-left: -20px;
+  z-index: 1;
+}
 
 
 
