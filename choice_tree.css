@@ -135,6 +135,7 @@ header p {
   margin: 0px;
   padding: 3px;
   text-shadow: none;
+  font-family: sans-serif;
 }
 
 .filter-btn-group .filter-btn:first-child {
@@ -283,7 +284,7 @@ header p {
   text-align: center;
 }
 
-.references a {
+.references a, .references a:visited {
   color: #888;
   text-decoration: none;
 }

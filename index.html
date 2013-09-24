@@ -51,7 +51,7 @@
         <% if(!data_type_filter){ %>
           <% c_name = "filter-btn-no-inactive"; %>
           <% if(value===-1) { c_name = "filter-btn-no-active"; } %>
-          <li class="filter-btn <%= c_name %>" data-id='-1'>x</li>
+          <li class="filter-btn <%= c_name %>" data-id='-1'>&#x2717;</li>
         <% } %>
       </ul>
       <span class='name'><%= name %></span>
@@ -71,14 +71,14 @@
               <% if(value===true) { %>
                 <span class="yes">&#x2713;</span>
               <% } else { %>
-                <span class="no">x</span>
+                <span class="no">&#x2717;</span>
               <% } %>
             </span>
             <span class="properties-name"><%= name %></span>
           </li>
         <% }); %>
       </ul>
-      <p class="Can work with">
+      <p class="references">
       <% if(reference_url !== "") { %>
         <a class="reference_link" href="<%= reference_url %>">Reference</a>
       <% } %>
