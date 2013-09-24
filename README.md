@@ -5,3 +5,5 @@ Prototype of a web application (written using [Backbone.js](http://backbonejs.or
 The idea would be to collaborative on the filter categories and content, such that the result is not biased.
 
 [Demo](http://olav.ilo.de/choose_reconstruction/)
+
+Designed by [Ben Hartley](http://www.subvergedesign.com/).
