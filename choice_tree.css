@@ -177,6 +177,15 @@ header p {
   padding-top: 20px;
 }
 
+#filterstats .badge {
+  background-color: white;
+  border-radius: 40%;
+  color: black;
+  padding: 3px 6px;
+  text-shadow: none;
+  font-weight: bold;
+}
+
 /* define arrow downwards from the filter section
 reference: http://davidwalsh.name/css-triangles */
 
