@@ -2,6 +2,7 @@ body {
   background-color: #484843;
   color: white;
   width: auto;
+  min-width: 1000px;
   padding: 0px;
   margin: 0px;
   font-size: 14px;
@@ -182,7 +183,6 @@ header p {
   color: #444;
   list-style: none;
   width: 300px;
-  min-width: 200px;
   min-height: 3em;
   border-radius: 5px;
   margin: 10px;
