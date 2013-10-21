@@ -106,14 +106,19 @@
     </script>
     
     <script type="text/template" id="modal-template">
-      <h2>More info: <%= name %></h2>
-      <p><%= description %></p>
-      <h3>References:</h3>
-      <ul class="modal_references">
-        <% _(references).each(function(url, ref) { %>
-          <li><a href="<%= url %>"><%= ref %></a></li>
-        <% }); %>
-      </ul>
+      <div class="modal_header">
+        <h2>More info: <%= name %></h2>
+      </div>
+      <div class="modal_content">
+        <p><%= description %></p>
+        <h3>References:</h3>
+        <ul class="modal_references">
+          <% _(references).each(function(url, ref) { %>
+            <li><a href="<%= url %>"><%= ref %></a></li>
+          <% }); %>
+        </ul>
+      </div>
+      <div class="modal_footer">OK</div>
     </script>
 
     

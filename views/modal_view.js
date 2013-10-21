@@ -13,8 +13,7 @@ app.ModalView = Backbone.View.extend({
   },
   
   events: {
-    'keydown': 'hide',
-    'click': 'hide'
+    'click .modal_footer': 'hide'
   },
   
   show: function() {
