@@ -119,7 +119,8 @@
       var methods = new app.ReconstructionMethodList();
 
       // declare reconstruction methods and their features
-      methods.add( new app.ReconstructionMethod({name: "Cross-Correlation", properties: {
+      methods.add( new app.ReconstructionMethod({name: "Cross-Correlation",
+        properties: {
           "Can work with single cell resolution" : true,
           "Can work with calcium fluorescence data" : true,
           "Can work with macro scale resolution" : true,
@@ -127,9 +128,12 @@
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'Correlation is a standard method to quantify the statistical similarity between time series. Asymmetry in the direction is achieved by introducing a time-lag. Nevertheless, correlation does not imply causation.',
         reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Mutual Information", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Mutual Information",
+        properties: {
           "Can work with single cell resolution" : true,
           "Non-linear" : true,
           "Model-free" : true,
@@ -139,18 +143,24 @@
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'As the non-linear generalization of Cross-correlation, Mutual Information has become a standard estimator in the neurosciences.',
         reference_url : 'http://en.wikipedia.org/wiki/Mutual_information'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Granger Causality", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Granger Causality",
+        properties: {
           "Can work with single cell resolution" : true,
           "Can work with macro scale resolution" : true,
           "Can work with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'Clive Granger described causality as improved prediction, and in that sense is Granger Causality a causal estimator in a linear auto-regressive framework.',
         reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Transfer Entropy", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Transfer Entropy",
+        properties: {
           "Non-linear" : true,
           "Can work with single cell resolution" : true,
           "Can work with macro scale resolution" : true,
@@ -160,9 +170,12 @@
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'Introduced by Thomas Schreiber in 2000, Transfer Entropy is the non-linear version of Granger Causality.',
         reference_url : 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",
+        properties: {
           "Non-linear" : true,
           "Can work with single cell resolution" : true,
           "Can work with calcium fluorescence data" : true,
@@ -171,63 +184,66 @@
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'Generalized Transfer Entropy was developed for neural systems that are state-dependent, for example bursting networks. It can also allow for interactions that are faster than the recording resolution, like calcium imaging data.',
         reference_url : 'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1002653',
         verified_by_author : true
       }));
-      methods.add( new app.ReconstructionMethod({name: "Bayesian Inference", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Bayesian Inference",
+        properties: {
           "Non-linear" : true,
           "Can work with single cell resolution" : true,
           "Can work with calcium fluorescence data" : true,
           "Has been tested in simulations": true
         },
+        description: 'Using statistical inference, Mishchencko et al. reconstruct synaptic networks using a two step approach: First infer the spike times from calcium fluorescence data, then infer the parameters of an assumed Generalized Linear Model to get at the synaptic weights.',
         reference_url : 'http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562720'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction",
+        properties: {
           "Can work with single cell resolution" : true,
           "Can work with anatomical data" : true,
           "Model-free" : true,
           "Has been applied to real data": true
         },
+        description: 'Based on EM-data of thin slices of tissue, this is a computational approach to follow axons and dendrites to get a 3D reconstruction of neuronal tissue. This results in a set of contact points between neurons with putative synapses.',
         reference_url : 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'
       }));
-      // methods.add( new app.ReconstructionMethod({name: "Tensor Diffusion Imaging", properties: {
-      //           "Can work with anatomical data" : true,
-      //           "Can work with macro scale resolution" : true
-      //         },
-      //         reference_url : 'http://www.pnas.org/content/109/28/11372.short'
-      //       }));
-      // methods.add( new app.ReconstructionMethod({name: "Patch Clamp", properties: {
-      //           "Can work with spike data": true,
-      //           "Can work with single cell resolution" : true,
-      //           "yields the ground truth, no approximation" : true
-      //         },
-      //         reference_url : 'http://www.annualreviews.org/doi/pdf/10.1146/annurev.ph.46.030184.002323'
-      //       }));
-      methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
+        properties: {
           "Can work with single cell resolution" : true,
           "Non-linear" : true,
           "Can work with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'Assuming a Generalized Linear Model for the neurons and using spike data as source, synapses can be extracted from the resulting connectivity kernels.',
         reference_url : 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades",
+        properties: {
           "Can work with single cell resolution" : true,
           "Non-linear" : true,
           "Can work with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'In a simple cascade model, the high-dimensional inference problem can be reduced to a smaller set of putitative connections per neuron, which can then be solved statistically.',
         reference_url : 'http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000271'
       }));
-      methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling", properties: {
+      
+      methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling",
+        properties: {
           "Non-linear" : true,
           "Can work with macro scale resolution" : true,
           "Can work with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
+        description: 'Developed for fMRI data sets, coupling parameters are inferred in a Bayesian framework assuming a bilinear nature of the nodes in the system.',
         reference_url : 'http://www.sciencedirect.com/science/article/pii/S1053811903002027'
       }));
 
