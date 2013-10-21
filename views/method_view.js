@@ -5,13 +5,17 @@ app.ReconstructionMethodView = Backbone.View.extend({
   
   initialize: function() {
     this.listenTo(this.model, 'change:matches_current_filters', this.filter_matching_state_has_changed);
-    _.bindAll(this, 'filter_matching_state_has_changed', 'hide', 'show');
+    _.bindAll(this, 'filter_matching_state_has_changed', 'hide', 'show', 'open_modal');
   },
   
   render: function() {
     // alert("DEBUG: rendering category "+this.model.get("name"));
     this.$el.html( this.template(this.model.toJSON()) );
     return this;
+  },
+  
+  events: {
+    'click .more_info': 'open_modal'
   },
   
   filter_matching_state_has_changed: function(model, value) {
@@ -36,6 +40,11 @@ app.ReconstructionMethodView = Backbone.View.extend({
     // alert("show");
     this.$el.fadeTo(500, 1);
     this.$el.removeClass('hidden-method');
+  },
+  
+  open_modal: function() {
+    var modal = new app.ModalView({'model': this.model});
+    modal.show();
   }
   
 });

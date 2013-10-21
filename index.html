@@ -7,39 +7,45 @@
   </head>
   
   <body>
-    <header>
-      <h1>Dear neuroscientist</h1>
-      <h2>choose your reconstruction method</h2>
+    <div id="container">
+      <header>
+        <h1>Dear neuroscientist</h1>
+        <h2>choose your reconstruction method</h2>
       
-      <p>Finding the right tool to analyze structural connectivity can be<br/>
-        tough, since there are so many out there. We can help, though!</p>
-    </header>
+        <p>Finding the right tool to analyze structural connectivity can be<br/>
+          tough, since there are so many out there. We can help, though!</p>
+      </header>
     
-    <div id='criteria'>
-      <h2>Adjust the criteria to restrict your search</h2>
-      <div class='spacer'>&nbsp;</div>
+      <div id='criteria'>
+        <h2>Adjust the criteria to restrict your search</h2>
+        <div class='spacer'>&nbsp;</div>
       
-      <div id='criteria-data-types'>
-        <h3>Please select what data you want the method to be able to work with:</h3>
-        <ul><!-- list is generated dynamically --></ul>
+        <div id='criteria-data-types'>
+          <h3>Please select what data you want the method to be able to work with:</h3>
+          <ul><!-- list is generated dynamically --></ul>
+        </div>
+        <div id='criteria-features'>
+          <h3>Please select what other properties the method should have:</h3>
+          <ul><!-- list is generated dynamically --></ul>
+        </div>
+        <div id='filterstats'>
+          Please specify your criteria.
+        </div>
       </div>
-      <div id='criteria-features'>
-        <h3>Please select what other properties the method should have:</h3>
-        <ul><!-- list is generated dynamically --></ul>
-      </div>
-      <div id='filterstats'>
-        Please specify your criteria.
-      </div>
+    
+      <ul id='choice_tree'>
+        <!-- list is generated dynamically -->
+      </ul>
+    
+      <footer>
+        There are currently no methods listed. (Please enable JavaScript to use this app.)
+        <!-- number is updated dynamically -->
+      </footer>
     </div>
     
-    <ul id='choice_tree'>
-      <!-- list is generated dynamically -->
-    </ul>
-    
-    <footer>
-      There are currently no methods listed. (Please enable JavaScript to use this app.)
-      <!-- number is updated dynamically -->
-    </footer>
+    <div id='modal'>
+      <!-- modal is generated dynamically -->
+    </div>
     
     <script type="text/template" id="category-template">
       <ul class="filter-btn-group">
@@ -78,10 +84,8 @@
           </li>
         <% }); %>
       </ul>
-      <p class="references">
-      <% if(reference_url !== "") { %>
-        <a class="reference_link" href="<%= reference_url %>">Reference</a>
-      <% } %>
+      <p class="more_info">
+        More Info >
       </div>
     </script>
     
@@ -101,7 +105,13 @@
       <p>Design by <a href="http://www.subvergedesign.com/">Ben Hartley</a>.</p>
     </script>
     
-    
+    <script type="text/template" id="modal-template">
+      <h2>More info: <%= name %></h2>
+      <p><%= description %></p>
+      <h3>References:</h3>
+      <a href="<%= reference_url%>"><%= reference_url%></a>
+    </script>
+
     
     <script type="text/javascript" src="choice_tree.min.js"></script>    
     

@@ -19,6 +19,7 @@
   * @depend views/filter_view.js
   * @depend views/method_section.js
   * @depend views/filter_section.js
+  * @depend views/modal_view.js
   * @depend views/app_view.js
 */
 
