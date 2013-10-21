@@ -1,6 +1,6 @@
 app.ModalView = Backbone.View.extend({
   el: $('#modal'),
-\  template: _.template($('#modal-template').html()),
+  template: _.template($('#modal-template').html()),
   
   initialize: function() {
     _.bindAll(this, 'render', 'show', 'hide');

@@ -109,7 +109,11 @@
       <h2>More info: <%= name %></h2>
       <p><%= description %></p>
       <h3>References:</h3>
-      <a href="<%= reference_url%>"><%= reference_url%></a>
+      <ul class="modal_references">
+        <% _(references).each(function(url, ref) { %>
+          <li><a href="<%= url %>"><%= ref %></a></li>
+        <% }); %>
+      </ul>
     </script>
 
     
@@ -129,7 +133,7 @@
           "Has been applied to real data": true
         },
         description: 'Correlation is a standard method to quantify the statistical similarity between time series. Asymmetry in the direction is achieved by introducing a time-lag. Nevertheless, correlation does not imply causation.',
-        reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
+        references: {'Wikipedia article': 'http://en.wikipedia.org/wiki/Correlation_and_dependence'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Mutual Information",
@@ -144,7 +148,7 @@
           "Has been applied to real data": true
         },
         description: 'As the non-linear generalization of Cross-correlation, Mutual Information has become a standard estimator in the neurosciences.',
-        reference_url : 'http://en.wikipedia.org/wiki/Mutual_information'
+        references: {'Wikipedia article': 'http://en.wikipedia.org/wiki/Mutual_information'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Granger Causality",
@@ -156,7 +160,7 @@
           "Has been applied to real data": true
         },
         description: 'Clive Granger described causality as improved prediction, and in that sense is Granger Causality a causal estimator in a linear auto-regressive framework.',
-        reference_url : 'http://en.wikipedia.org/wiki/Correlation_and_dependence'
+        references: {'Wikipedia article': 'http://en.wikipedia.org/wiki/Granger_causality', 'Granger, C. (1969). Investigating causal relations by econometric models and cross-spectral methods. Econometrica 37, 424–438.': 'http://www.jstor.org/stable/1912791'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Transfer Entropy",
@@ -171,7 +175,7 @@
           "Has been applied to real data": true
         },
         description: 'Introduced by Thomas Schreiber in 2000, Transfer Entropy is the non-linear version of Granger Causality.',
-        reference_url : 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1'
+        references: {'Schreiber, T. (2000). Measuring information transfer. Phys Rev Lett 85, 461–464.': 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",
@@ -185,7 +189,7 @@
           "Has been applied to real data": true
         },
         description: 'Generalized Transfer Entropy was developed for neural systems that are state-dependent, for example bursting networks. It can also allow for interactions that are faster than the recording resolution, like calcium imaging data.',
-        reference_url : 'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1002653',
+        references: {'Stetter, O., Battaglia, D., Soriano, J., and Geisel, T. (2012). Model-free reconstruction of excitatory neuronal connectivity from calcium imaging signals. PLoS Comput Biol 8, e1002653.': 'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1002653', 'Orlandi, J.G., Stetter, O., Soriano, J., Geisel, T., and Battaglia, D. (2013). Transfer Entropy reconstruction and labeling of neuronal connections from simulated calcium imaging. arXiv 1309.4287.': 'http://arxiv.org/abs/1309.4287'},
         verified_by_author : true
       }));
       
@@ -197,7 +201,7 @@
           "Has been tested in simulations": true
         },
         description: 'Using statistical inference, Mishchencko et al. reconstruct synaptic networks using a two step approach: First infer the spike times from calcium fluorescence data, then infer the parameters of an assumed Generalized Linear Model to get at the synaptic weights.',
-        reference_url : 'http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562720'
+        references: {'Mishchencko, Y., Vogelstein, J.T., and Paninski, L. (2011). A Bayesian approach for inferring neuronal connectivity from calcium fluorescent imaging data. Ann Appl Stat 5, 1229–1261.': 'http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562720'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction",
@@ -208,7 +212,7 @@
           "Has been applied to real data": true
         },
         description: 'Based on EM-data of thin slices of tissue, this is a computational approach to follow axons and dendrites to get a 3D reconstruction of neuronal tissue. This results in a set of contact points between neurons with putative synapses.',
-        reference_url : 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'
+        references: {'Mishchenko, Y., and Paninski, L. (2012). A Bayesian compressed-sensing approach for reconstructing neural connectivity from subsampled anatomical data. J Comput Neurosci, In press.': 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
@@ -220,7 +224,7 @@
           "Has been applied to real data": true
         },
         description: 'Assuming a Generalized Linear Model for the neurons and using spike data as source, synapses can be extracted from the resulting connectivity kernels.',
-        reference_url : 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'
+        references: {'Pillow, J., Shlens, J., Paninski, L., Sher, A., and Litke, A. (2008). Spatio-temporal correlations and visual signalling in a complete neuronal population. Nature 454, 995–1000.': 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades",
@@ -232,7 +236,7 @@
           "Has been applied to real data": true
         },
         description: 'In a simple cascade model, the high-dimensional inference problem can be reduced to a smaller set of putitative connections per neuron, which can then be solved statistically.',
-        reference_url : 'http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000271'
+        references: {'Pajevic, S., and Plenz, D. (2009). Efficient network reconstruction from dynamical cascades identifies small-world topology of neuronal avalanches. PLoS Comput Biol 5, e1000271.': 'http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000271'}
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling",
@@ -244,7 +248,7 @@
           "Has been applied to real data": true
         },
         description: 'Developed for fMRI data sets, coupling parameters are inferred in a Bayesian framework assuming a bilinear nature of the nodes in the system.',
-        reference_url : 'http://www.sciencedirect.com/science/article/pii/S1053811903002027'
+        references: {'Friston, K.J., Harrison, L., and Penny, W. (2003). Dynamic causal modelling. NeuroImage 19, 1273–1302.': 'http://www.sciencedirect.com/science/article/pii/S1053811903002027'}
       }));
 
       var filters = new app.FilterList();
