@@ -50,7 +50,7 @@ app.FilterList = Backbone.Collection.extend({
     
     if(!c_name_already_present) {
       // A bit of a hack: We specify the filter type by the name
-      var looks_like_data_filter = (c_name.substring(0, 8) === 'Can work');
+      var looks_like_data_filter = (c_name.substring(0, 10) === "Works with");
       // alert("DEBUG: found new category: "+c_name+", looks_like_data_filter = "+looks_like_data_filter);
       var new_c = new app.Filter({
         'name': c_name,

@@ -130,10 +130,10 @@
       // declare reconstruction methods and their features
       methods.add( new app.ReconstructionMethod({name: "Cross-Correlation",
         properties: {
-          "Can work with single cell resolution" : true,
-          "Can work with calcium fluorescence data" : true,
-          "Can work with macro scale resolution" : true,
-          "Can work with fMRI data" : true,
+          "Works with single cell resolution" : true,
+          "Works with calcium fluorescence data" : true,
+          "Works with macro scale resolution" : true,
+          "Works with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -143,12 +143,12 @@
       
       methods.add( new app.ReconstructionMethod({name: "Mutual Information",
         properties: {
-          "Can work with single cell resolution" : true,
+          "Works with single cell resolution" : true,
           "Non-linear" : true,
           "Model-free" : true,
-          "Can work with spike data" : true,
-          "Can work with macro scale resolution" : true,
-          "Can work with fMRI data" : true,
+          "Works with spike data" : true,
+          "Works with macro scale resolution" : true,
+          "Works with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -158,9 +158,9 @@
       
       methods.add( new app.ReconstructionMethod({name: "Granger Causality",
         properties: {
-          "Can work with single cell resolution" : true,
-          "Can work with macro scale resolution" : true,
-          "Can work with fMRI data" : true,
+          "Works with single cell resolution" : true,
+          "Works with macro scale resolution" : true,
+          "Works with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -171,11 +171,11 @@
       methods.add( new app.ReconstructionMethod({name: "Transfer Entropy",
         properties: {
           "Non-linear" : true,
-          "Can work with single cell resolution" : true,
-          "Can work with macro scale resolution" : true,
+          "Works with single cell resolution" : true,
+          "Works with macro scale resolution" : true,
           "Model-free" : true,
-          "Can work with spike data" : true,
-          "Can work with fMRI data" : true,
+          "Works with spike data" : true,
+          "Works with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -186,10 +186,10 @@
       methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",
         properties: {
           "Non-linear" : true,
-          "Can work with single cell resolution" : true,
-          "Can work with calcium fluorescence data" : true,
+          "Works with single cell resolution" : true,
+          "Works with calcium fluorescence data" : true,
           "Model-free" : true,
-          "Can work with spike data": true,
+          "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -201,8 +201,8 @@
       methods.add( new app.ReconstructionMethod({name: "Bayesian Inference",
         properties: {
           "Non-linear" : true,
-          "Can work with single cell resolution" : true,
-          "Can work with calcium fluorescence data" : true,
+          "Works with single cell resolution" : true,
+          "Works with calcium fluorescence data" : true,
           "Has been tested in simulations": true
         },
         description: 'Using statistical inference, Mishchencko et al. reconstruct synaptic networks using a two step approach: First infer the spike times from calcium fluorescence data, then infer the parameters of an assumed Generalized Linear Model to get at the synaptic weights.',
@@ -211,8 +211,8 @@
       
       methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction",
         properties: {
-          "Can work with single cell resolution" : true,
-          "Can work with anatomical data" : true,
+          "Works with single cell resolution" : true,
+          "Works with anatomical data" : true,
           "Model-free" : true,
           "Has been applied to real data": true
         },
@@ -222,9 +222,9 @@
       
       methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
         properties: {
-          "Can work with single cell resolution" : true,
+          "Works with single cell resolution" : true,
           "Non-linear" : true,
-          "Can work with spike data": true,
+          "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -234,9 +234,9 @@
       
       methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades",
         properties: {
-          "Can work with single cell resolution" : true,
+          "Works with single cell resolution" : true,
           "Non-linear" : true,
-          "Can work with spike data": true,
+          "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -247,8 +247,8 @@
       methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling",
         properties: {
           "Non-linear" : true,
-          "Can work with macro scale resolution" : true,
-          "Can work with fMRI data" : true,
+          "Works with macro scale resolution" : true,
+          "Works with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
