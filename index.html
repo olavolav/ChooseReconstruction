@@ -111,12 +111,23 @@
       </div>
       <div class="modal_content">
         <p><%= description %></p>
+
         <h3>References:</h3>
         <ul class="modal_references">
           <% _(references).each(function(url, ref) { %>
             <li><a href="<%= url %>"><%= ref %></a></li>
           <% }); %>
         </ul>
+
+        <% if(code_repositories) { %>
+          <h3>Available open source code:</h3>
+          <ul class="modal_references">
+            <% _(code_repositories).each(function(url, language) { %>
+              <li><a href="<%= url %>"><%= language %></a></li>
+            <% }); %>
+          </ul>
+        <% } %>
+
       </div>
       <div class="modal_footer">OK</div>
     </script>
@@ -195,6 +206,7 @@
         },
         description: 'Generalized Transfer Entropy was developed for neural systems that are state-dependent, for example bursting networks. It can also allow for interactions that are faster than the recording resolution, like calcium imaging data.',
         references: {'Stetter, O., Battaglia, D., Soriano, J., and Geisel, T. (2012). Model-free reconstruction of excitatory neuronal connectivity from calcium imaging signals. PLoS Comput Biol 8, e1002653.': 'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1002653', 'Orlandi, J.G., Stetter, O., Soriano, J., Geisel, T., and Battaglia, D. (2013). Transfer Entropy reconstruction and labeling of neuronal connections from simulated calcium imaging. arXiv 1309.4287.': 'http://arxiv.org/abs/1309.4287'},
+        code_repositories: {'C++': 'https://github.com/olavolav/TE-Causality', 'MatLab': 'https://github.com/olavolav/GTE-Challenge'},
         verified_by_author : true
       }));
       
