@@ -5,7 +5,7 @@ app.FilterView = Backbone.View.extend({
   
   initialize: function() {
     this.listenTo(this.model, 'change', this.render);
-    _.bindAll(this, 'click_in_neutral_button', 'click_in_yes_button', 'click_in_no_button');
+    _.bindAll(this, 'click_in_neutral_button', 'click_in_yes_button', 'click_in_no_button', 'show_help_text', 'hide_help_text', 'toggle_help_text');
   },
   
   render: function() {
@@ -21,7 +21,11 @@ app.FilterView = Backbone.View.extend({
     "click .filter-btn-yes-inactive": "click_in_yes_button",
     "click .filter-btn-yes-active": "click_in_yes_button",
     "click .filter-btn-no-inactive": "click_in_no_button",
-    "click .filter-btn-no-active": "click_in_no_button"
+    "click .filter-btn-no-active": "click_in_no_button",
+    "mouseover .filter_tooltip_icon": "show_help_text",
+    "mouseleave .filter_tooltip_icon": "hide_help_text",
+    // same for touch screens
+    "click .filter_tooltip_icon": "toggle_help_text"
   },
   
   click_in_neutral_button: function() { this.click_in_filter_buttons(0); },
@@ -35,6 +39,23 @@ app.FilterView = Backbone.View.extend({
     } else {
       // this is if the user clicked on an active filter
       this.model.set('value', 0);
+    }
+  },
+  
+  show_help_text: function() {
+    // alert(this.model.get('help_text'));
+    this.$el.find('.filter_help_text').show();
+  },
+  
+  hide_help_text: function() {
+    this.$el.find('.filter_help_text').hide();
+  },
+  
+  toggle_help_text: function() {
+    if(this.$el.find('.filter_help_text').css('display') === 'none') {
+      this.show_help_text();
+    } else {
+      this.hide_help_text();
     }
   }
   

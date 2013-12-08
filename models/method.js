@@ -13,7 +13,7 @@ app.ReconstructionMethod = Backbone.Model.extend({
   
   initialize: function(settings) {
     // add default variables, if they had not been set as parameter to the constructor
-    this.set("properties", $.extend({}, DEFAULT_METHOD_PROPERTIES, this.get("properties")));
+    this.set("properties", $.extend({}, app.DEFAULT_METHOD_PROPERTIES, this.get("properties")));
   }
   
 });

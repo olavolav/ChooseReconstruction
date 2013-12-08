@@ -54,6 +54,7 @@ app.FilterList = Backbone.Collection.extend({
       // alert("DEBUG: found new category: "+c_name+", looks_like_data_filter = "+looks_like_data_filter);
       var new_c = new app.Filter({
         'name': c_name,
+        'help_text': app.FILTER_HELP_TEXTS[c_name],
         'data_type_filter': looks_like_data_filter
       });
       this.add(new_c);
