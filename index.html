@@ -173,6 +173,20 @@
           'Quinn, C.J., Coleman, T.P., Kiyavash, N., and Hatsopoulos, N.G. (2010). Estimating the directed information to infer causal relationships in ensemble neural spike train recordings. J Comput Neurosci 30, 17–44.': 'http://www.springerlink.com/index/10.1007/s10827-010-0247-2'}
       }));
       
+      methods.add( new app.ReconstructionMethod({name: "Incremental Mutual Information",
+        properties: {
+          "Works with single cell resolution" : true,
+          "Non-linear" : true,
+          "Model-free" : true,
+          "Works with spike data" : true,
+          "Has been tested in simulations": true,
+          "Has been applied to real data": true
+        },
+        description: 'Incremental Mutual Information is a modification of Mutual Information which conditions out temporal dependencies in the responses of neurons, to better disambiguate different connectivity motifs.',
+        references: {
+          'Singh, A., and Lesica, N.A. (2010). Incremental mutual information: A new method for characterizing the strength and dynamics of connections in neuronal circuits. PLoS Comput Biol 6, e1001035.': 'http://dx.plos.org/10.1371/journal.pcbi.1001035.g005'}
+      }));
+      
       methods.add( new app.ReconstructionMethod({name: "Granger Causality",
         properties: {
           "Works with single cell resolution" : true,
