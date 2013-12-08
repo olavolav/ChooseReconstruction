@@ -42,6 +42,10 @@ app.FILTER_DEFINITIONS = {
   "Has been applied to real data": {
     'default': false,
     'help_text': 'The method has been applied and benchmarked, in at least one peer-reviewed journal, to recordings of (biological) neuronal data (in vitro or in vivo).'
+  },
+  "Standard method": {
+    'default': false,
+    'help_text': 'The method has been used in at least 10 peer-reviewed publications.'
   }
 };
 
