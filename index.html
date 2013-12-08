@@ -199,12 +199,17 @@
           "Model-free" : true,
           "Works with spike data" : true,
           "Works with fMRI data" : true,
+          "Works with EEG data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true,
           "Standard method": true
         },
         description: 'Introduced by Thomas Schreiber in 2000, Transfer Entropy is the non-linear version of Granger Causality.',
-        references: {'Schreiber, T. (2000). Measuring information transfer. Phys Rev Lett 85, 461–464.': 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1'}
+        references: {
+          'Schreiber, T. (2000). Measuring information transfer. Phys Rev Lett 85, 461–464.': 'http://prl.aps.org/abstract/PRL/v85/i2/p461_1',
+          'Kaiser, A., and Schreiber, T. (2002). Information transfer in continuous processes. Physica D 166, 43–62.': 'http://apps.isiknowledge.com/full_record.do?product=WOS&search_mode=GeneralSearch&qid=1&SID=T1c9EmHIiJ92Ak5mN7j&page=1&doc=4',
+          'Besserve, M., Schölkopf, B., Logothetis, N.K., and Panzeri, S. (2010). Causal relationships between frequency bands of extracellular signals in visual cortex revealed by an information theoretic analysis. J Comput Neurosci 29, 547–566.': 'http://www.ncbi.nlm.nih.gov/pubmed/20396940'
+        }
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",

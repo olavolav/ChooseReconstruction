@@ -31,6 +31,10 @@ app.FILTER_DEFINITIONS = {
     'default': false,
     'help_text': 'The method has been used in at least one peer-reviewed journal for network reconstruction based on MRI recordings.'
   },
+  "Works with EEG data": {
+    'default': false,
+    'help_text': 'The method has been used in at least one peer-reviewed journal for network reconstruction based on multi-electrode EEG recordings.'
+  },
   "Model-free": {
     'default': false,
     'help_text': 'The method makes no assumptions about the underlying neuronal dynamics, which can be a strength if an appropriate model for all or some neurons is not known.'
