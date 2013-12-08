@@ -41,7 +41,7 @@ app.FILTER_DEFINITIONS = {
   },
   "Has been tested in simulations": {
     'default': false,
-    'help_text': 'The method has been applied and benchmarked, in at least one peer-reviewed journal, to simulated neuronal data (in silice).'
+    'help_text': 'The method has been applied and benchmarked, in at least one peer-reviewed journal, to simulated neuronal data (in silico).'
   },
   "Has been applied to real data": {
     'default': false,
