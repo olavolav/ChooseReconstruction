@@ -4,8 +4,6 @@
 //
 // by Olav Stetter, 2013
 
-// Command used for minification: (after setting up the right Ruby environment)
-// $ juicer merge -i -s --force choice_tree.js
 
 /** @depend jquery-1.7.2.min.js
   * @depend underscore-min.js
