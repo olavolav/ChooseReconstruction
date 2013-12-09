@@ -5,9 +5,9 @@
 // by Olav Stetter, 2013
 
 
-/** @depend jquery-1.7.2.min.js
-  * @depend underscore-min.js
-  * @depend backbone.js
+/** @depend lib/jquery-1.7.2.min.js
+  * @depend lib/underscore-min.js
+  * @depend lib/backbone.js
   * @depend config.js
   * @depend models/method.js
   * @depend models/filter.js
