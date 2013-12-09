@@ -1,0 +1,228 @@
+/* define header syle */
+
+header {
+  width: auto;
+  padding: 1em;
+  margin: 0px;
+  background-color: #579f7b;
+  border-bottom: solid 8px #4e8f6e;
+  text-align: center;
+  background-image: url('images/header-background.gif');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-shadow: #3d6f56 0px 1px, #3d6f56 0px 2px, #3d6f56 0px 3px, #3d6f56 0px 4px, #3d6f56 0px 5px;
+  }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-shadow: #3d6f56 0px 1px, #3d6f56 0px 2px, #3d6f56 0px 3px, #3d6f56 0px 4px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: auto 20%;
+    text-shadow: #3d6f56 0px 1px, #3d6f56 0px 2px, #3d6f56 0px 3px;
+  }
+}
+
+/* define filter styles */
+
+#criteria {
+  width: auto;
+  padding: 8px;
+  margin: 15px 15px 25px 15px;
+  background-color: #5c5c5a;
+  border-radius: 10px;
+  border: solid 1px #878787;
+  text-shadow: black 0px 2px;
+  position: relative;
+  
+  h2 {
+    font-size: 26px;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: 18px;
+    text-align: left;
+    font-weight: normal;
+  }
+
+  .spacer {
+    margin: 10px auto;
+    padding: 0px;
+    width: 9%;
+    border-top: solid 1px #878787;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+#criteria-data-types, #criteria-features {
+  width: 30%;
+  display: inline-block;
+}
+
+#criteria-data-types {
+  margin-left: 17%;
+  margin-right: 3%;
+  float: left;
+}
+
+#criteria-features {
+  margin-left: 3%;
+  margin-right: 17%;
+  float: left;
+}
+
+
+
+
+.filter {
+  display: block;
+  width: auto;
+  min-width: 35%;
+  min-height: 24px;
+}
+
+.filter-btn-group {
+  display: inline-block;
+  color: black;
+  padding: 0px;
+  margin: 2px 12px 2px 2px;
+  background-color: #878787;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+.filter-btn {
+  list-style: none;
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+  margin: 0px;
+  padding: 3px;
+  text-shadow: none;
+  font-family: sans-serif;
+}
+
+.filter-btn-group .filter-btn:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.filter-btn-group .filter-btn:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.filter-btn-neutral-inactive, .filter-btn-yes-inactive, .filter-btn-no-inactive {
+  box-shadow: #444444 0px 2px;
+  background-color: #cccccc;
+}
+
+.filter-btn-neutral-active, .filter-btn-yes-active, .filter-btn-no-active {
+  box-shadow: #555 0px -2px;
+  color: white;
+}
+
+.filter-btn-neutral-active {
+  background-color: #444444;
+}
+
+.filter-btn-yes-active {
+  background-color: #579f7b;
+  text-shadow: 0 -1px 1px #468063;
+}
+
+.filter-btn-no-active {
+  background-color: #f45540;
+  text-shadow: 0 -1px 1px #c0493a;
+}
+
+.filter_tooltip_icon {
+  cursor: pointer;
+  border-radius: 10px;
+  color: #999;
+  border: 1px solid #999;
+  padding: 3px 5px;
+  text-shadow: none;
+  font-size: 80%;
+  margin-left: 6px;
+}
+
+.filter_help_text {
+  display: none;
+  background-color: #333;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: absolute;
+  max-width: 30%;
+  box-shadow: 2px 2px 6px #444444;
+  z-index: 99;
+}
+
+
+
+#filterstats {
+  clear: both;
+  padding-top: 20px;
+}
+
+#filterstats .badge {
+  background-color: white;
+  border-radius: 40%;
+  color: black;
+  padding: 3px 6px;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+/* define arrow downwards from the filter section
+reference: http://davidwalsh.name/css-triangles */
+
+#criteria:before, #criteria:after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 20px solid transparent;
+}
+
+/* top-stacked, smaller arrow */
+#criteria:before {
+  border-top-color: #5c5c5a;
+  bottom: -40px;
+  left: 50%;
+  margin-left: -20px;
+  z-index: 2;
+}
+
+/* arrow which acts as a background shadow */
+#criteria:after {
+  border-top-color: #878787;
+  bottom: -41px;
+  left: 50%;
+  margin-left: -20px;
+  z-index: 1;
+}

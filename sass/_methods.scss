@@ -1,0 +1,107 @@
+/* define reconstruction method styles */
+
+.rec_method {
+  display: inline-block;
+  vertical-align: top;
+  color: #444;
+  list-style: none;
+  width: 290px;
+  min-height: 3em;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 0px;
+  background-color: #f5f5f5;
+  font-size: 13px;
+  box-shadow: #333 0px 4px 4px;
+  text-align: center;
+
+  h2 {
+    font-size: 16px;
+    font-weight: normal;
+    width: auto;
+    margin: 0px;
+    padding: 5px;
+    background-color: #579f7b;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-shadow: 0 -1px 1px #666666;
+  }
+}
+
+.rec_method.hidden-method {
+  box-shadow: none;
+}
+
+.rec_method.hidden-method h2 {
+  background-color: #666666;
+  color: #f5f5f5;
+}
+
+.verified_symbol {
+  padding-left: 5px;
+}
+
+.properties .properties-value .yes {
+  color: #579f7b;
+}
+
+.properties .properties-value .no {
+  color: #f45540;
+}
+
+.rec_method.hidden-method .properties .properties-value .yes, .rec_method.hidden-method .properties .properties-value .no {
+  color: inherit;
+}
+
+/* link to more infos */
+.rec_method p {
+  color: #999;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 4px 15px;
+  border-top: 1px solid #c4c4c4;
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: 0px auto;
+}
+
+.rec_method p a, .rec_method p a:visited {
+  color: #999;
+}
+
+.rec_method ul {
+  text-align: left;
+  padding: 7px;
+  font-size: 90%;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+.properties > li {
+  list-style: none;
+}
+
+.properties .properties-value {
+  display: inline-block;
+  font-weight: bold;
+  width: 20px;
+  text-align: center;
+}
+
+.properties .properties-name {
+  padding-left: 4px;
+}
+
+.more_info {
+  width: auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.more_info a, .more_info a:visited {
+  color: #888;
+  text-decoration: none;
+}
