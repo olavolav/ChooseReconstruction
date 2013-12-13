@@ -143,10 +143,10 @@
       // declare reconstruction methods and their features
       methods.add( new app.ReconstructionMethod({name: "Cross-Correlation",
         properties: {
-          "Works with single cell resolution" : true,
-          "Works with calcium fluorescence data" : true,
-          "Works with macro scale resolution" : true,
-          "Works with fMRI data" : true,
+          "Works with single cell resolution": true,
+          "Works with calcium fluorescence data": true,
+          "Works with macro scale resolution": true,
+          "Works with fMRI data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true,
           "Standard method": true
@@ -158,12 +158,12 @@
       
       methods.add( new app.ReconstructionMethod({name: "Mutual Information",
         properties: {
-          "Works with single cell resolution" : true,
-          "Non-linear" : true,
-          "Model-free" : true,
-          "Works with spike data" : true,
-          "Works with macro scale resolution" : true,
-          "Works with fMRI data" : true,
+          "Works with single cell resolution": true,
+          "Non-linear": true,
+          "Model-free": true,
+          "Works with spike data": true,
+          "Works with macro scale resolution": true,
+          "Works with fMRI data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true,
           "Standard method": true
@@ -178,10 +178,10 @@
       
       methods.add( new app.ReconstructionMethod({name: "Incremental Mutual Information",
         properties: {
-          "Works with single cell resolution" : true,
-          "Non-linear" : true,
-          "Model-free" : true,
-          "Works with spike data" : true,
+          "Works with single cell resolution": true,
+          "Non-linear": true,
+          "Model-free": true,
+          "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
         },
@@ -192,10 +192,10 @@
       
       methods.add( new app.ReconstructionMethod({name: "Granger Causality",
         properties: {
-          "Works with single cell resolution" : true,
-          "Works with macro scale resolution" : true,
-          "Works with spike data" : true,
-          "Works with fMRI data" : true,
+          "Works with single cell resolution": true,
+          "Works with macro scale resolution": true,
+          "Works with spike data": true,
+          "Works with fMRI data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true,
           "Standard method": true
@@ -213,12 +213,12 @@
       
       methods.add( new app.ReconstructionMethod({name: "Transfer Entropy",
         properties: {
-          "Non-linear" : true,
-          "Works with single cell resolution" : true,
-          "Works with macro scale resolution" : true,
-          "Model-free" : true,
-          "Works with spike data" : true,
-          "Works with fMRI data" : true,
+          "Non-linear": true,
+          "Works with single cell resolution": true,
+          "Works with macro scale resolution": true,
+          "Model-free": true,
+          "Works with spike data": true,
+          "Works with fMRI data": true,
           "Works with EEG data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true,
@@ -235,22 +235,22 @@
       
       methods.add( new app.ReconstructionMethod({name: "Incremental Transfer Entropy",
         properties: {
-          "Non-linear" : true,
-          "Model-free" : true
+          "Non-linear": true,
+          "Model-free": true
         },
         description: 'Incremental TE is an extension of TE that identifies the inputs to a given neuron by gradually building up the statistically significant set of source neurons.',
         references: {
           'Lizier, J., and Rubinov, M. (2012). Multivariate construction of effective computational networks from observational data. Pre-print from mis.mpg.de.': 'http://www.mis.mpg.de/publications/preprints/2012/prepr2012-25.html'
         },
-        verified_by_author : true
+        verified_by_author: true
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",
         properties: {
-          "Non-linear" : true,
-          "Works with single cell resolution" : true,
-          "Works with calcium fluorescence data" : true,
-          "Model-free" : true,
+          "Non-linear": true,
+          "Works with single cell resolution": true,
+          "Works with calcium fluorescence data": true,
+          "Model-free": true,
           "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
@@ -258,14 +258,14 @@
         description: 'Generalized Transfer Entropy was developed for neural systems that are state-dependent, for example bursting networks. It can also allow for interactions that are faster than the recording resolution, like calcium imaging data.',
         references: {'Stetter, O., Battaglia, D., Soriano, J., and Geisel, T. (2012). Model-free reconstruction of excitatory neuronal connectivity from calcium imaging signals. PLoS Comput Biol 8, e1002653.': 'http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1002653', 'Orlandi, J.G., Stetter, O., Soriano, J., Geisel, T., and Battaglia, D. (2013). Transfer Entropy reconstruction and labeling of neuronal connections from simulated calcium imaging. arXiv 1309.4287.': 'http://arxiv.org/abs/1309.4287'},
         code_repositories: {'C++': 'https://github.com/olavolav/TE-Causality', 'MatLab': 'https://github.com/olavolav/GTE-Challenge'},
-        verified_by_author : true
+        verified_by_author: true
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Bayesian Inference",
         properties: {
-          "Non-linear" : true,
-          "Works with single cell resolution" : true,
-          "Works with calcium fluorescence data" : true,
+          "Non-linear": true,
+          "Works with single cell resolution": true,
+          "Works with calcium fluorescence data": true,
           "Has been tested in simulations": true
         },
         description: 'Using statistical inference, Mishchencko et al. reconstruct synaptic networks using a two step approach: First infer the spike times from calcium fluorescence data, then infer the parameters of an assumed Generalized Linear Model to get at the synaptic weights.',
@@ -275,9 +275,9 @@
       
       methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction",
         properties: {
-          "Works with single cell resolution" : true,
-          "Works with anatomical data" : true,
-          "Model-free" : true,
+          "Works with single cell resolution": true,
+          "Works with anatomical data": true,
+          "Model-free": true,
           "Has been applied to real data": true
         },
         description: 'Based on EM-data of thin slices of tissue, this is a computational approach to follow axons and dendrites to get a 3D reconstruction of neuronal tissue. This results in a set of contact points between neurons with putative synapses.',
@@ -286,8 +286,8 @@
       
       methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
         properties: {
-          "Works with single cell resolution" : true,
-          "Non-linear" : true,
+          "Works with single cell resolution": true,
+          "Non-linear": true,
           "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
@@ -299,8 +299,8 @@
       
       methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades",
         properties: {
-          "Works with single cell resolution" : true,
-          "Non-linear" : true,
+          "Works with single cell resolution": true,
+          "Non-linear": true,
           "Works with spike data": true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
@@ -311,8 +311,8 @@
       
       methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling",
         properties: {
-          "Non-linear" : true,
-          "Works with macro scale resolution" : true,
+          "Non-linear": true,
+          "Works with macro scale resolution": true,
           "Works with fMRI data" : true,
           "Has been tested in simulations": true,
           "Has been applied to real data": true
