@@ -329,11 +329,23 @@
 
       var filters = new app.FilterList();
       filters.generate_from_method_collection(methods);
-
       // start app
       new app.AppView(methods, filters);
-      
-      
     </script>
+
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '52aae9b6e32bb4612d0007f7');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+
   </body>
 </html>
