@@ -3,3 +3,7 @@ design
 
 .sass-cache
 
+# Ignore compiled/minified CSS and JS files
+choice_tree.min.js
+choice_tree.css
+
