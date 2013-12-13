@@ -233,6 +233,18 @@
         code_repositories: {'As part of the TE-Causality package (C++)': 'https://github.com/olavolav/TE-Causality', 'Trentool (Matlab toolbox)': 'http://www.trentool.de/'}
       }));
       
+      methods.add( new app.ReconstructionMethod({name: "Incremental Transfer Entropy",
+        properties: {
+          "Non-linear" : true,
+          "Model-free" : true
+        },
+        description: 'Incremental TE is an extension of TE that identifies the inputs to a given neuron by gradually building up the statistically significant set of source neurons.',
+        references: {
+          'Lizier, J., and Rubinov, M. (2012). Multivariate construction of effective computational networks from observational data. Pre-print from mis.mpg.de.': 'http://www.mis.mpg.de/publications/preprints/2012/prepr2012-25.html'
+        },
+        verified_by_author : true
+      }));
+      
       methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",
         properties: {
           "Non-linear" : true,
