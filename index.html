@@ -320,11 +320,20 @@
           "Non-linear": true,
           "Works with macro scale resolution": true,
           "Works with fMRI data" : true,
+          "Works with EEG data": true,
           "Has been tested in simulations": true,
-          "Has been applied to real data": true
+          "Has been applied to real data": true,
+          "Standard method": true
         },
         description: 'Developed for fMRI data sets, coupling parameters are inferred in a Bayesian framework assuming a bilinear nature of the nodes in the system.',
-        references: {'Friston, K.J., Harrison, L., and Penny, W. (2003). Dynamic causal modelling. NeuroImage 19, 1273–1302.': 'http://www.sciencedirect.com/science/article/pii/S1053811903002027'}
+        references: {
+          'Scholarpedia article': 'http://www.scholarpedia.org/article/Dynamic_causal_modeling',
+          'Friston, K.J., Harrison, L., and Penny, W. (2003). Dynamic causal modelling. NeuroImage 19, 1273–1302.': 'http://www.sciencedirect.com/science/article/pii/S1053811903002027',
+          'Friston, K.J., Bastos, A., Litvak, V., Stephan, K.E., Fries, P. and Moran, R. (2012). DCM for complex-valued data: Cross-spectra, coherence and phase-delays. NeuroImage 59, 439-455.': 'http://www.sciencedirect.com/science/article/pii/S1053811911008251',
+          'List of publications using DCM (Wellcome Trust Centre for Neuroimaging)': 'http://www.fil.ion.ucl.ac.uk/spm/doc/biblio/Keyword/DCM.html'
+        },
+        code_repositories: {'Matlab': 'http://www.fil.ion.ucl.ac.uk/spm/software/'},
+        verified_by_author: "Guillaume Flandin"
       }));
 
       var filters = new app.FilterList();
