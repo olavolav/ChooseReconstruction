@@ -6,7 +6,7 @@ app.AppView = Backbone.View.extend({
   initialize: function(methods, filters) {
     // alert("init app.");
     this.header = $('header');
-    this.footer = $('footer');
+    this.footer = $('footer .method_count');
     this.filter_section = new app.FilterSection(filters);
     this.methods_section = new app.MethodSection(methods);
     
