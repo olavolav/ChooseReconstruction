@@ -280,16 +280,17 @@
         verified_by_author: "Olav Stetter"
       }));
       
-      methods.add( new app.ReconstructionMethod({name: "Bayesian Inference",
+      methods.add( new app.ReconstructionMethod({name: "Bayesian Inference (Calcium)",
         properties: {
           "Non-linear": true,
           "Works with single cell resolution": true,
           "Works with calcium fluorescence data": true,
           "Has been tested in simulations": true
         },
-        description: 'Using statistical inference, Mishchencko et al. reconstruct synaptic networks using a two step approach: First infer the spike times from calcium fluorescence data, then infer the parameters of an assumed Generalized Linear Model to get at the synaptic weights.',
-        references: {'Mishchencko, Y., Vogelstein, J.T., and Paninski, L. (2011). A Bayesian approach for inferring neuronal connectivity from calcium fluorescent imaging data. Ann Appl Stat 5, 1229–1261.': 'http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aoas/1310562720'},
-        code_repositories: {'Matlab': 'https://github.com/jovo/oopsi'}
+        description: 'Using statistical inference, Mishchencko et al. reconstruct synaptic networks from population calcium imaging data using a two step approach: First infer the spike times, then infer the parameters of an assumed Generalized Linear Model to get at the synaptic weights.',
+        references: {'Mishchencko, Y., Vogelstein, J.T., and Paninski, L. (2011). A Bayesian approach for inferring neuronal connectivity from calcium fluorescent imaging data. Ann Appl Stat 5, 1229–1261.': 'http://scinetcentral.com/~mishchenko/preprint-bayes.pdf'},
+        code_repositories: {'NETFIT (Matlab package)': 'http://scinetcentral.com/~mishchenko/NETFIT_package.zip'},
+        verified_by_author: "Yuriy Mishchenko"
       }));
       
       methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction",
