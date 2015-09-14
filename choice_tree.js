@@ -19,5 +19,17 @@
   * @depend views/filter_section.js
   * @depend views/modal_view.js
   * @depend views/app_view.js
+  * @depend fixtures/methods.js
 */
 
+
+
+var app = app || {};
+// _.extend(app, Backbone.Events); // to enable observer role of EventDispatcher
+
+
+app.filters = new app.FilterList();
+app.filters.generate_from_method_collection(app.methods);
+
+// start app
+new app.AppView(app.methods, app.filters);
