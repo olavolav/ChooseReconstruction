@@ -1,5 +1,5 @@
 app.ReconstructionMethod = Backbone.Model.extend({
-  
+
   defaults: function() {
     return {
       name: "Anonymous method",
@@ -10,10 +10,10 @@ app.ReconstructionMethod = Backbone.Model.extend({
       code_repositories: null
     };
   },
-  
+
   initialize: function(settings) {
     // add default variables, if they had not been set as parameter to the constructor
     this.set("properties", $.extend({}, app.DEFAULT_METHOD_PROPERTIES, this.get("properties")));
   }
-  
+
 });
