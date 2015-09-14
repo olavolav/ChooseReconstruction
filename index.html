@@ -300,8 +300,9 @@
           "Model-free": true,
           "Has been applied to real data": true
         },
-        description: 'Based on EM-data of thin slices of tissue, this is a computational approach to follow axons and dendrites to get a 3D reconstruction of neuronal tissue. This results in a set of contact points between neurons with putative synapses.',
-        references: {'Mishchenko, Y., and Paninski, L. (2012). A Bayesian compressed-sensing approach for reconstructing neural connectivity from subsampled anatomical data. J Comput Neurosci, In press.': 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'}
+        description: 'Based on high-resolution transmission electron microscopy imaging of series of thin slices of neural tissue, a set of image processing tools had been developed for automated following of axons and dendrites in stacks of such images and producing dense 3D reconstruction of the content of small blocks of neuronal tissue at nanometer scale. Potentially, this approach can allow reconstructing physical connectivity in neural tissue by identifying synapses in electron microscopic images and tracing respective axons and dendrites to their associated cell bodies.',
+        references: {'Mishchenko, Y., and Paninski, L. (2012). A Bayesian compressed-sensing approach for reconstructing neural connectivity from subsampled anatomical data. J Comput Neurosci, In press.': 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'},
+        verified_by_author: "Yuriy Mishchenko"
       }));
 
       methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
