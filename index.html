@@ -5,22 +5,22 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="choice_tree.css" type="text/css" />
   </head>
-  
+
   <body>
     <div id="container">
       <a href="https://github.com/olavolav/ChooseReconstruction"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
       <header>
         <h1>Dear neuroscientist</h1>
         <h2>choose your reconstruction method</h2>
-      
+
         <p>Finding the right statistical tool to analyze structural connectivity can be<br/>
           tough, since there are so many out there. We can help, though!</p>
       </header>
-    
+
       <div id='criteria'>
         <h2>Adjust the criteria to restrict your search</h2>
         <div class='spacer'>&nbsp;</div>
-      
+
         <div id='criteria-data-types'>
           <h3>Please select what data you want the method to be able to work with:</h3>
           <ul><!-- list is generated dynamically --></ul>
@@ -33,17 +33,17 @@
           Please specify your criteria.
         </div>
       </div>
-    
+
       <ul id='choice_tree'>
         <!-- list is generated dynamically -->
       </ul>
-    
+
       <footer>
         Note that the information of methods marked with the star symbol &#9734; has been verified by the authors of the paper shown as reference.<br/>
         <span class="method_count">There are currently 0 methods listed. (Please enable JavaScript to use this app.)</span>
         <!-- number is updated dynamically -->
         Want to add your own? Please do <a href="mailto:olav@nld.ds.mpg.de">contact us</a>.
-        
+
         <p id="impressum_trigger">Click <a onClick="$('#impressum').show();$('#impressum_trigger').hide();">here to display legal notice (Impressum)</a>.</p>
         <p id="impressum" style="display:none">
           <strong>Impressum:</strong> (§5 Telemediengesetz)<br/>
@@ -57,15 +57,15 @@
         <p>Design by <a href="http://www.subvergedesign.com/">Ben Hartley</a>.</p>
       </footer>
     </div>
-    
+
     <div id='modal'>
       <!-- modal is generated dynamically -->
     </div>
-    
+
     <script type="text/template" id="category-template">
       <ul class="filter-btn-group">
         <% var c_name = ''; %>
-        
+
         <% c_name = "filter-btn-yes-inactive"; %>
         <% if(value===1) { c_name = "filter-btn-yes-active"; } %>
         <li class="filter-btn <%= c_name %>" data-id='1'>&#x2713;</li>
@@ -104,7 +104,7 @@
         More Info >
       </div>
     </script>
-    
+
     <script type="text/template" id="filterstats-template">
       There
       <% if(nr == 1) { %>
@@ -114,11 +114,11 @@
       <% } %>
       your criteria.
     </script>
-    
+
     <script type="text/template" id="stats-template">
       There are currently <%= nr %> methods listed.
     </script>
-    
+
     <script type="text/template" id="modal-template">
       <div class="modal_header">
         <h2>More info: <%= name %></h2>
@@ -152,9 +152,9 @@
       <div class="modal_footer">OK</div>
     </script>
 
-    
-    <script type="text/javascript" src="choice_tree.min.js"></script>    
-    
+
+    <script type="text/javascript" src="choice_tree.min.js"></script>
+
     <script type="text/javascript">
       var methods = new app.ReconstructionMethodList();
 
@@ -173,7 +173,7 @@
         references: {'Wikipedia article': 'http://en.wikipedia.org/wiki/Correlation_and_dependence'},
         code_repositories: {'As part of the TE-Causality package (C++)': 'https://github.com/olavolav/TE-Causality', 'Matlab function xcorr': 'http://www.mathworks.com/help/signal/ref/xcorr.html'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Mutual Information",
         properties: {
           "Works with single cell resolution": true,
@@ -193,7 +193,7 @@
           'Quinn, C.J., Coleman, T.P., Kiyavash, N., and Hatsopoulos, N.G. (2010). Estimating the directed information to infer causal relationships in ensemble neural spike train recordings. J Comput Neurosci 30, 17–44.': 'http://www.springerlink.com/index/10.1007/s10827-010-0247-2'},
         code_repositories: {'As part of the TE-Causality package (C++)': 'https://github.com/olavolav/TE-Causality'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Incremental Mutual Information",
         properties: {
           "Works with single cell resolution": true,
@@ -208,7 +208,7 @@
           'Singh, A., and Lesica, N.A. (2010). Incremental mutual information: A new method for characterizing the strength and dynamics of connections in neuronal circuits. PLoS Comput Biol 6, e1001035.': 'http://dx.plos.org/10.1371/journal.pcbi.1001035.g005'},
         verified_by_author: "Abhinav Singh"
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Granger Causality",
         properties: {
           "Works with single cell resolution": true,
@@ -229,7 +229,7 @@
         },
         code_repositories: {'As part of the TE-Causality package (C++)': 'https://github.com/olavolav/TE-Causality'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Transfer Entropy",
         properties: {
           "Non-linear": true,
@@ -251,7 +251,7 @@
         },
         code_repositories: {'As part of the TE-Causality package (C++)': 'https://github.com/olavolav/TE-Causality', 'Trentool (Matlab toolbox)': 'http://www.trentool.de/'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Incremental Transfer Entropy",
         properties: {
           "Non-linear": true,
@@ -263,7 +263,7 @@
         },
         verified_by_author: "Joseph Lizier"
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Generalized Transfer Entropy",
         properties: {
           "Non-linear": true,
@@ -279,7 +279,7 @@
         code_repositories: {'C++': 'https://github.com/olavolav/TE-Causality', 'MatLab': 'https://github.com/olavolav/GTE-Challenge'},
         verified_by_author: "Olav Stetter"
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Bayesian Inference (Calcium)",
         properties: {
           "Non-linear": true,
@@ -292,7 +292,7 @@
         code_repositories: {'NETFIT (Matlab package)': 'http://scinetcentral.com/~mishchenko/NETFIT_package.zip'},
         verified_by_author: "Yuriy Mishchenko"
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Anatomical Reconstruction",
         properties: {
           "Works with single cell resolution": true,
@@ -303,7 +303,7 @@
         description: 'Based on EM-data of thin slices of tissue, this is a computational approach to follow axons and dendrites to get a 3D reconstruction of neuronal tissue. This results in a set of contact points between neurons with putative synapses.',
         references: {'Mishchenko, Y., and Paninski, L. (2012). A Bayesian compressed-sensing approach for reconstructing neural connectivity from subsampled anatomical data. J Comput Neurosci, In press.': 'http://www.springerlink.com/index/10.1007/s10827-012-0390-z'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
         properties: {
           "Works with single cell resolution": true,
@@ -316,7 +316,7 @@
         references: {'Pillow, J., Shlens, J., Paninski, L., Sher, A., and Litke, A. (2008). Spatio-temporal correlations and visual signalling in a complete neuronal population. Nature 454, 995–1000.': 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'},
         code_repositories: {'Matlab function': 'http://www.mathworks.com/help/stats/generalized-linear-models_btq_wnf-1.html'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades",
         properties: {
           "Works with single cell resolution": true,
@@ -328,7 +328,7 @@
         description: 'In a simple cascade model, the high-dimensional inference problem can be reduced to a smaller set of putitative connections per neuron, which can then be solved statistically.',
         references: {'Pajevic, S., and Plenz, D. (2009). Efficient network reconstruction from dynamical cascades identifies small-world topology of neuronal avalanches. PLoS Comput Biol 5, e1000271.': 'http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000271'}
       }));
-      
+
       methods.add( new app.ReconstructionMethod({name: "Dynamical Causal Modeling",
         properties: {
           "Non-linear": true,
