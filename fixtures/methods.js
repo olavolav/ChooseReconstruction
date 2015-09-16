@@ -155,11 +155,13 @@ app.methods.add( new app.ReconstructionMethod({name: "Generalized Linear Model",
     "Non-linear": true,
     "Works with spike data": true,
     "Has been tested in simulations": true,
-    "Has been applied to real data": true
+    "Has been applied to real data": true,
+    "Standard method": true
   },
   description: 'Assuming a Generalized Linear Model for the neurons and using spike data as source, synapses can be extracted from the resulting connectivity kernels.',
   references: {'Pillow, J., Shlens, J., Paninski, L., Sher, A., and Litke, A. (2008). Spatio-temporal correlations and visual signalling in a complete neuronal population. Nature 454, 995–1000.': 'http://www.nature.com/nature/journal/v454/n7207/abs/nature07140.html'},
-  code_repositories: {'Matlab function': 'http://www.mathworks.com/help/stats/generalized-linear-models_btq_wnf-1.html'}
+  code_repositories: {'Matlab function': 'http://www.mathworks.com/help/stats/generalized-linear-models_btq_wnf-1.html'},
+  verified_by_author: 'Jonathan Pillow'
 }));
 
 app.methods.add( new app.ReconstructionMethod({name: "Dynamical Cascades",
