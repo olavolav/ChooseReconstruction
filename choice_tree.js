@@ -23,10 +23,7 @@
 */
 
 
-
 var app = app || {};
-// _.extend(app, Backbone.Events); // to enable observer role of EventDispatcher
-
 
 app.filters = new app.FilterList();
 app.filters.generate_from_method_collection(app.methods);
